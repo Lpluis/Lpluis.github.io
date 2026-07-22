@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+---
+
+<BaseLayout
+  title="Engineering Projects | Luis Leon"
+  description="FPGA, embedded systems, PCB, verification, and hardware projects."
+>
+  <section class="page-header container">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Engineering Projects</h1>
+
+    <p class="hero-description">
+      Detailed project documentation covering requirements, architecture,
+      implementation, verification, debugging, and results.
+    </p>
+  </section>
+
+  <section class="section container">
+    <div class="project-grid">
+      <ProjectCard
+        title="FPGA Autonomous Robot"
+        description="Autonomous navigation and motor-control system implemented in SystemVerilog."
+        image="/images/fpga-robot/robot.jpg"
+        imageAlt="FPGA autonomous robot"
+        href="/projects/fpga-autonomous-robot/"
+        technologies={['SystemVerilog', 'Zynq-7000', 'PWM']}
+      />
+
+      <ProjectCard
+        title="AXI Peripheral Verification"
+        description="Protocol and register verification for AXI4-Lite peripherals."
+        image="/images/axi-verification/waveform.png"
+        imageAlt="AXI simulation waveform"
+        href="/projects/axi-verification/"
+        technologies={['AXI VIP', 'SystemVerilog', 'XSim']}
+      />
+
+      <ProjectCard
+        title="BCG Data Acquisition PCB"
+        description="Mixed-signal PCB design, bring-up, measurement, and validation."
+        image="/images/bcg-pcb/pcb.jpg"
+        imageAlt="BCG data acquisition PCB"
+        href="/projects/bcg-pcb/"
+        technologies={['PCB', 'Mixed Signal', 'Validation']}
+      />
+
+      <ProjectCard
+        title="ESP32-C6 Sensor Web Server"
+        description="Embedded sensor platform with Wi-Fi browser monitoring."
+        image="/images/esp32-server/dashboard.png"
+        imageAlt="ESP32 sensor dashboard"
+        href="/projects/esp32-web-server/"
+        technologies={['ESP32-C6', 'C++', 'I2C']}
+      />
+    </div>
+  </section>
+</BaseLayout>
