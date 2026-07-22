@@ -1,11 +1,106 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Luis Leon | Electrical Engineer">
+  <section class="hero container">
+    <div class="hero-content">
+      <p class="eyebrow">Electrical Engineer</p>
+
+      <h1>
+        FPGA, embedded systems, PCB design, and hardware verification
+      </h1>
+
+      <p class="hero-description">
+        I design, integrate, test, and debug FPGA-based systems,
+        embedded platforms, mixed-signal electronics, and board-level
+        hardware.
+      </p>
+
+      <div class="button-row">
+        <a class="button primary-button" href="/projects/">
+          View Projects
+        </a>
+
+        <a
+          class="button secondary-button"
+          href="/documents/Luis_Leon_Resume.pdf"
+          target="_blank"
+        >
+          View Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <p class="eyebrow">Technical Work</p>
+      <h2>Featured Projects</h2>
+
+      <p class="section-description">
+        Selected work covering FPGA development, embedded systems,
+        mixed-signal hardware, verification, and board-level testing.
+      </p>
+    </div>
+
+    <div class="project-grid">
+      <ProjectCard
+        title="FPGA Autonomous Robot"
+        description="SystemVerilog autonomous controller using a Zynq-7000 SoC, ultrasonic sensing, infrared boundary detection, PWM motor control, and finite-state-machine navigation."
+        image="/images/fpga-robot/robot.jpg"
+        imageAlt="FPGA autonomous robot"
+        href="/projects/fpga-autonomous-robot/"
+        technologies={[
+          'SystemVerilog',
+          'Vivado',
+          'Zynq-7000',
+          'PWM',
+        ]}
+      />
+
+      <ProjectCard
+        title="AXI Peripheral Verification"
+        description="AXI4-Lite verification environment for GPIO, I2C, SPI, and PWM peripherals using AXI VIP, register transactions, simulation, and protocol testing."
+        image="/images/axi-verification/waveform.png"
+        imageAlt="AXI verification simulation waveform"
+        href="/projects/axi-verification/"
+        technologies={[
+          'AXI4-Lite',
+          'AXI VIP',
+          'SystemVerilog',
+          'XSim',
+        ]}
+      />
+
+      <ProjectCard
+        title="BCG Data Acquisition PCB"
+        description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a BCG data-acquisition platform."
+        image="/images/bcg-pcb/pcb.jpg"
+        imageAlt="Mixed-signal BCG data acquisition PCB"
+        href="/projects/bcg-pcb/"
+        technologies={[
+          'PCB Design',
+          'Mixed Signal',
+          'Oscilloscope',
+          'Validation',
+        ]}
+      />
+
+      <ProjectCard
+        title="ESP32-C6 Sensor Web Server"
+        description="Wi-Fi-enabled embedded monitoring platform that collects sensor measurements and displays them through a browser-based dashboard."
+        image="/images/esp32-server/dashboard.png"
+        imageAlt="ESP32-C6 sensor web dashboard"
+        href="/projects/esp32-web-server/"
+        technologies={[
+          'ESP32-C6',
+          'C++',
+          'I2C',
+          'HTML',
+        ]}
+      />
+    </div>
+  </section>
+</BaseLayout>
