@@ -6,8 +6,14 @@ import ProjectCard from '../components/ProjectCard.astro';
 <BaseLayout title="Luis Leon | Electrical Engineer">
   <section class="hero container">
     <div class="hero-content">
-      <p class="eyebrow">Electrical Engineer</p>
 
+      <div class="construction-notice" role="status">
+        <strong>Portfolio under construction.</strong>
+        This site is actively being developed, and additional projects,
+        documentation, and technical details are being added.
+      </div>
+
+      <p class="eyebrow">Electrical Engineer</p>
       <h1>
         FPGA, embedded systems, PCB design, and hardware verification
       </h1>
@@ -56,7 +62,7 @@ import ProjectCard from '../components/ProjectCard.astro';
         technologies={[
           'SystemVerilog',
           'Zynq-7000',
-          'AXI4-Lite',
+          'AXI',
           'FPGA Verification',
           'Vivado',
           'Embedded C',
@@ -81,7 +87,7 @@ import ProjectCard from '../components/ProjectCard.astro';
       <ProjectCard
         title="BCG Data Acquisition PCB"
         description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a BCG data-acquisition platform."
-        image="/images/bcg-pcb/pcb.jpg"
+        image="/images/bcg-pcb/BCG_PCB1.jpg"
         imageAlt="Mixed-signal BCG data acquisition PCB"
         href="/projects/bcg-pcb/"
         technologies={[
@@ -93,14 +99,20 @@ import ProjectCard from '../components/ProjectCard.astro';
       />
 
       <ProjectCard
-        title="ESP32-C6 Sensor Web Server"
-        description="Wi-Fi-enabled embedded monitoring platform that collects sensor measurements and displays them through a browser-based dashboard."
-        image="/images/esp32-server/dashboard.png"
-        imageAlt="ESP32-C6 sensor web dashboard"
-        href="/projects/esp32-web-server/"
+        title="GitHub Pages Website"
+        description="A responsive website built with Astro and Tailwind CSS, showcasing my portfolio and projects."
+        image="/images/github-pages-website.png"
+        imageAlt="GitHub Pages website"
+        href="/projects/github-pages-website/"
         technologies={[
-          'ESP32-C6',
-          'C++',
+          'Astro',
+          'Tailwind CSS',
+          'JavaScript',
+        ]}
+      />
+    </div>
+  </section>
+</BaseLayout>
           'I2C',
           'HTML',
         ]}

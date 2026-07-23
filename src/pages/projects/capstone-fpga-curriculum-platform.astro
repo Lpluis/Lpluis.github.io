@@ -1,0 +1,585 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const learningObjectives = [
+  'Introduce students to FPGA and digital-system design fundamentals.',
+  'Provide hands-on experience with SystemVerilog, Vivado, and Zynq-7000 hardware.',
+  'Demonstrate communication between programmable logic and embedded software.',
+  'Teach students how to integrate, configure, test, and debug AXI-based peripherals.',
+  'Connect classroom theory with hands-on exercises and physical hardware.',
+];
+
+const technologies = [
+  'SystemVerilog',
+  'Zynq-7000',
+  'AXI4-Lite',
+  'AXI VIP',
+  'Vivado',
+  'Vitis',
+  'XSIM',
+  'ARM',
+  'Embedded C',
+  'I2C',
+  'SPI',
+  'GPIO',
+  'PWM'
+];
+
+const contributions = [
+  'Coordinated an eight-person multidisciplinary project team.',
+  'Managed FPGA bitstream builds, releases, and hardware configurations.',
+  'Supported SystemVerilog module integration and AXI peripheral testing.',
+  'Developed simulation and hardware-validation procedures.',
+  'Created technical documentation and guided laboratory material.',
+  'Performed system-level debugging and stress testing.',
+];
+
+const validationMethods = [
+  'SystemVerilog simulation with XSim',
+  'AXI register read and write testing',
+  'AXI VIP protocol verification',
+  'Peripheral-level hardware testing',
+  'Oscilloscope and logic-analyzer measurements',
+  'Repeatable laboratory procedure validation',
+  'Full-system integration and stress testing',
+];
+---
+
+<BaseLayout
+  title="Capstone FPGA Curriculum Platform | Luis Leon Pineda"
+  description="Our team is designing an educational development board tailored for Texas State University’s HDL course to enhance hands-on learning in digital systems. We will implement and simulate IIC, SPI, 
+  and PWM interfaces on the CORA Z7 FPGA using Xilinx tools like Vivado and Vitis. The final deliverable will be a functioning prototype that supports both physical and digital simulations. 
+  This project aims to improve student retention and real-world readiness by integrating practical hardware experience into the curriculum."
+>
+  <!-- Project hero -->
+  <section class="project-hero container">
+    <div class="project-hero-content">
+      <p class="eyebrow">Senior Design Capstone Project</p>
+
+      <h1>Capstone FPGA Curriculum Platform</h1>
+
+      <p class="hero-description">
+        An educational FPGA platform designed to give engineering students
+        practical experience with digital logic, embedded systems,
+        hardware/software integration, and verification using a Zynq-7000
+        development board.
+      </p>
+
+      <div class="technology-list project-technologies">
+        {
+          technologies.map((technology) => (
+            <span>{technology}</span>
+          ))
+        }
+      </div>
+
+      <div class="button-row">
+        <a class="button primary-button" href="#educational-purpose">
+          Educational Purpose
+        </a>
+
+        <a class="button secondary-button" href="#implementation">
+          View Implementation
+        </a>
+
+        <!-- Replace # with your repository or documentation link -->
+        <a
+          class="button secondary-button"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Repository
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="project-hero-image"
+      src="/images/capstone-platform/platform.jpg"
+      alt="Zynq-7000 FPGA curriculum platform developed for engineering education"
+    />
+  </section>
+
+  <!-- Quick project facts -->
+  <section class="project-facts-section">
+    <div class="container project-facts-grid">
+      <article class="project-fact">
+        <p class="project-fact-label">Project Type</p>
+        <p>Senior Design Capstone</p>
+      </article>
+
+      <article class="project-fact">
+        <p class="project-fact-label">Primary Purpose</p>
+        <p>Engineering Education</p>
+      </article>
+
+      <article class="project-fact">
+        <p class="project-fact-label">Platform</p>
+        <p>Cora Z7, Zynq-7000 SoC</p>
+      </article>
+
+      <article class="project-fact">
+        <p class="project-fact-label">Team Size</p>
+        <p>Eight Students</p>
+      </article>
+    </div>
+  </section>
+
+  <article class="project-page container">
+    <!-- Overview -->
+    <section class="project-section" id="overview">
+      <div class="project-section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>Bridging classroom theory and practical FPGA development</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The Capstone FPGA Curriculum Platform was developed as an
+          instructional system for introducing engineering students to FPGA
+          design, embedded programming, AXI communication, peripheral
+          integration, verification, and hardware debugging.
+        </p>
+
+        <p>
+          Rather than functioning only as a technical demonstration, the
+          platform was designed as a reusable educational resource. It
+          combined working hardware, reusable HDL modules, embedded software,
+          guided laboratory procedures, technical documentation, and
+          verification examples into one structured learning environment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Educational purpose -->
+    <section class="project-section" id="educational-purpose">
+      <div class="project-section-heading">
+        <p class="eyebrow">Educational Purpose</p>
+        <h2>A hands-on platform for learning FPGA and embedded-system design</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The primary goal of the project was to reduce the gap between
+          theoretical digital-design coursework and the practical skills
+          required to build and debug a complete FPGA-based system.
+        </p>
+
+        <p>
+          Students could use the platform to progress from basic HDL concepts
+          to complete hardware/software integration. Each laboratory exercise
+          was intended to introduce a focused engineering concept while also
+          contributing to a larger working system.
+        </p>
+
+        <div class="learning-objectives">
+          <h3>Learning objectives</h3>
+
+          <ul class="project-list">
+            {
+              learningObjectives.map((objective) => (
+                <li>{objective}</li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning progression -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Curriculum Structure</p>
+        <h2>Progressive learning from HDL fundamentals to system integration</h2>
+      </div>
+
+      <div class="learning-path-grid">
+        <article class="learning-step">
+          <span class="learning-step-number">01</span>
+          <h3>Digital Logic</h3>
+          <p>
+            Students begin with combinational logic, sequential logic,
+            registers, counters, and finite-state machines.
+          </p>
+        </article>
+
+        <article class="learning-step">
+          <span class="learning-step-number">02</span>
+          <h3>SystemVerilog Design</h3>
+          <p>
+            Students implement reusable HDL modules and test their behavior
+            through simulation.
+          </p>
+        </article>
+
+        <article class="learning-step">
+          <span class="learning-step-number">03</span>
+          <h3>AXI Peripherals</h3>
+          <p>
+            Students learn memory-mapped communication, register interfaces,
+            address maps, and peripheral control.
+          </p>
+        </article>
+
+        <article class="learning-step">
+          <span class="learning-step-number">04</span>
+          <h3>Embedded Software</h3>
+          <p>
+            Students use embedded C to configure and communicate with
+            peripherals through the Zynq processing system.
+          </p>
+        </article>
+
+        <article class="learning-step">
+          <span class="learning-step-number">05</span>
+          <h3>Verification</h3>
+          <p>
+            Students validate functionality through simulation, AXI
+            transactions, measurements, and structured test procedures.
+          </p>
+        </article>
+
+        <article class="learning-step">
+          <span class="learning-step-number">06</span>
+          <h3>System Integration</h3>
+          <p>
+            Students combine programmable logic, embedded software, and
+            external hardware into a complete working platform.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">System Architecture</p>
+        <h2>Reusable hardware and software building blocks</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The platform used the Zynq-7000 architecture to demonstrate the
+          relationship between the processing system and programmable logic.
+          AXI-based peripherals provided practical examples of
+          hardware/software communication.
+        </p>
+
+        <img
+          class="project-content-image"
+          src="/images/capstone-platform/architecture.png"
+          alt="Block diagram of the FPGA curriculum platform architecture"
+        />
+
+        <div class="architecture-grid">
+          <article class="architecture-card">
+            <h3>Processing System</h3>
+            <p>
+              Embedded C applications configured peripherals, performed
+              register transactions, and supported interactive hardware
+              exercises.
+            </p>
+          </article>
+
+          <article class="architecture-card">
+            <h3>Programmable Logic</h3>
+            <p>
+              SystemVerilog modules implemented custom logic, interfaces,
+              controllers, and AXI-accessible peripherals.
+            </p>
+          </article>
+
+          <article class="architecture-card">
+            <h3>Peripheral Interfaces</h3>
+            <p>
+              GPIO, I²C, SPI, PWM, memory, and sensor interfaces demonstrated
+              common embedded-system communication methods.
+            </p>
+          </article>
+
+          <article class="architecture-card">
+            <h3>Verification Environment</h3>
+            <p>
+              Simulation, AXI VIP, register testing, and physical measurements
+              provided repeatable verification examples.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation -->
+    <section class="project-section" id="implementation">
+      <div class="project-section-heading">
+        <p class="eyebrow">Implementation</p>
+        <h2>Integrated instructional hardware, software, and documentation</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The project included more than the FPGA design itself. The completed
+          educational package was intended to provide everything required for
+          an instructor or student to reproduce, operate, study, and extend
+          the system.
+        </p>
+
+        <div class="deliverables-grid">
+          <article class="deliverable-card">
+            <h3>Reusable HDL Modules</h3>
+            <p>
+              Modular SystemVerilog components that could be studied,
+              simulated, modified, and reused in laboratory exercises.
+            </p>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Embedded Applications</h3>
+            <p>
+              Embedded C examples for configuring peripherals and
+              demonstrating hardware/software communication.
+            </p>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Laboratory Procedures</h3>
+            <p>
+              Structured instructions guiding students through setup,
+              implementation, testing, and troubleshooting.
+            </p>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Technical Documentation</h3>
+            <p>
+              Architecture descriptions, setup instructions, address maps,
+              testing procedures, and expected results.
+            </p>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Simulation Examples</h3>
+            <p>
+              Testbenches and waveform examples showing expected timing,
+              transactions, and peripheral behavior.
+            </p>
+          </article>
+
+          <article class="deliverable-card">
+            <h3>Hardware Demonstrations</h3>
+            <p>
+              Working demonstrations that allowed students to connect
+              simulated behavior with physical system operation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- My role -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">My Role</p>
+        <h2>Project management, integration, verification, and documentation</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          I served as the project manager while also contributing directly to
+          the technical implementation, integration, testing, and release of
+          the FPGA platform.
+        </p>
+
+        <ul class="project-list">
+          {
+            contributions.map((contribution) => (
+              <li>{contribution}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Verification -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Verification and Validation</p>
+        <h2>Confirming both technical operation and instructional usability</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          Verification addressed two goals: confirming that the hardware
+          operated correctly and ensuring that the instructional procedures
+          could be followed consistently by students.
+        </p>
+
+        <ul class="project-list">
+          {
+            validationMethods.map((method) => (
+              <li>{method}</li>
+            ))
+          }
+        </ul>
+
+        <img
+          class="project-content-image"
+          src="/images/capstone-platform/waveform.png"
+          alt="Simulation waveform used to verify the FPGA curriculum platform"
+        />
+      </div>
+    </section>
+
+    <!-- Challenges -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Engineering Challenges</p>
+        <h2>Designing for both functionality and teachability</h2>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <h3>System Complexity</h3>
+          <p>
+            The platform needed enough technical depth to demonstrate
+            real-world FPGA development without overwhelming students who were
+            new to the tools and architecture.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Repeatable Builds</h3>
+          <p>
+            FPGA projects, bitstreams, address maps, and software applications
+            needed to remain synchronized across multiple users and machines.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Clear Documentation</h3>
+          <p>
+            Laboratory instructions had to explain tool setup, hardware
+            operation, expected behavior, and troubleshooting in a logical
+            sequence.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Verification Coverage</h3>
+          <p>
+            The team needed to verify individual modules, AXI communication,
+            integrated behavior, and physical hardware operation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Results</p>
+        <h2>A reusable educational foundation for future FPGA instruction</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The final platform provided a working FPGA-based instructional
+          environment that combined hardware design, embedded software,
+          simulation, verification, documentation, and guided exercises.
+        </p>
+
+        <p>
+          The project established a foundation that could be expanded with new
+          peripherals, laboratory exercises, verification examples, and
+          student projects in future courses.
+        </p>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <strong>8</strong>
+            <span>Student team members</span>
+          </article>
+
+          <article class="result-card">
+            <strong>FPGA + ARM</strong>
+            <span>Integrated learning environment</span>
+          </article>
+
+          <article class="result-card">
+            <strong>AXI</strong>
+            <span>Memory-mapped peripheral architecture</span>
+          </article>
+
+          <article class="result-card">
+            <strong>Reusable</strong>
+            <span>Curriculum and laboratory foundation</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Project Gallery</p>
+        <h2>Hardware, simulation, and instructional material</h2>
+      </div>
+
+      <div class="project-gallery">
+        <figure>
+          <img
+            src="/images/capstone-platform/platform.jpg"
+            alt="Complete FPGA curriculum platform"
+          />
+          <figcaption>Complete hardware platform</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="/images/capstone-platform/architecture.png"
+            alt="FPGA curriculum platform architecture"
+          />
+          <figcaption>System architecture</figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="/images/capstone-platform/waveform.png"
+            alt="FPGA verification waveform"
+          />
+          <figcaption>Simulation and verification</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Final links -->
+    <section class="project-cta">
+      <p class="eyebrow">Explore the Project</p>
+      <h2>Technical resources and supporting material</h2>
+
+      <div class="button-row">
+        <a
+          class="button primary-button"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Repository
+        </a>
+
+        <a
+          class="button secondary-button"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Technical Documentation
+        </a>
+
+        <a class="button secondary-button" href="/projects/">
+          Back to Projects
+        </a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

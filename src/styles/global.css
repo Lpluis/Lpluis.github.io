@@ -309,3 +309,283 @@ h3 {
     text-align: center;
   }
 }
+
+/* Detailed project pages */
+
+.project-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+  min-height: 72vh;
+  padding-block: 6rem;
+}
+
+.project-hero-content {
+  max-width: 780px;
+}
+
+.project-hero-image {
+  width: 100%;
+  min-height: 420px;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.project-technologies {
+  margin-top: 2rem;
+}
+
+.project-technologies span {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted-text);
+  font-size: 0.85rem;
+}
+
+.project-facts-section {
+  border-block: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.project-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-fact {
+  padding: 2rem;
+  border-right: 1px solid var(--border);
+}
+
+.project-fact:last-child {
+  border-right: 0;
+}
+
+.project-fact p {
+  margin: 0;
+}
+
+.project-fact-label {
+  margin-bottom: 0.4rem !important;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.project-page {
+  padding-bottom: 7rem;
+}
+
+.project-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr;
+  gap: 4rem;
+  padding-block: 5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-section-heading {
+  max-width: 450px;
+}
+
+.project-section-content {
+  max-width: 850px;
+}
+
+.project-section-content > p {
+  color: var(--muted-text);
+  font-size: 1.05rem;
+}
+
+.project-list {
+  padding-left: 1.3rem;
+}
+
+.project-list li {
+  margin-bottom: 0.8rem;
+  color: var(--muted-text);
+}
+
+.learning-objectives {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+
+.learning-path-grid,
+.architecture-grid,
+.deliverables-grid,
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.learning-step,
+.architecture-card,
+.deliverable-card,
+.challenge-card {
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: var(--surface);
+}
+
+.learning-step p,
+.architecture-card p,
+.deliverable-card p,
+.challenge-card p {
+  color: var(--muted-text);
+}
+
+.learning-step-number {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.project-content-image {
+  width: 100%;
+  margin-block: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.result-card {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: var(--surface);
+}
+
+.result-card strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+
+.result-card span {
+  color: var(--muted-text);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-gallery figure {
+  margin: 0;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 250px;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.project-gallery figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+.project-cta {
+  padding-top: 5rem;
+  text-align: center;
+}
+
+.project-cta .button-row {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .project-hero,
+  .project-section {
+    grid-template-columns: 1fr;
+  }
+
+  .project-hero {
+    gap: 2rem;
+  }
+
+  .project-facts-grid,
+  .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-fact:nth-child(2) {
+    border-right: 0;
+  }
+
+  .project-fact:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery img {
+    height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .learning-path-grid,
+  .architecture-grid,
+  .deliverables-grid,
+  .challenge-grid,
+  .project-facts-grid,
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-fact {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-fact:last-child {
+    border-bottom: 0;
+  }
+
+  .project-hero-image {
+    min-height: 260px;
+  }
+}
+
+.construction-notice {
+  max-width: 760px;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.6rem;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--muted-text);
+}
+
+.construction-notice strong {
+  color: var(--accent);
+}

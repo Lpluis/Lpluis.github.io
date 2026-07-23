@@ -20,39 +20,62 @@ import ProjectCard from '../../components/ProjectCard.astro';
   <section class="section container">
     <div class="project-grid">
       <ProjectCard
-        title="FPGA Autonomous Robot"
-        description="Autonomous navigation and motor-control system implemented in SystemVerilog."
-        image="/images/fpga-robot/robot.jpg"
-        imageAlt="FPGA autonomous robot"
-        href="/projects/fpga-autonomous-robot/"
-        technologies={['SystemVerilog', 'Zynq-7000', 'PWM']}
+        title="Capstone FPGA Curriculum Platform"
+        description="Educational FPGA platform designed to give engineering students practical experience with digital design, embedded systems, and hardware/software integration. The project combined reusable SystemVerilog modules, AXI-based peripherals, guided laboratory procedures, technical documentation, and hardware demonstrations on a Zynq-7000 development board."
+        image="/images/CoraZ7.jpeg"
+        imageAlt="Zynq-7000 FPGA curriculum platform developed for hands-on engineering education"
+        href="/projects/capstone-fpga-curriculum-platform/"
+        technologies={[
+          'SystemVerilog',
+          'Zynq-7000',
+          'AXI',
+          'FPGA Verification',
+          'Vivado',
+          'Embedded C',
+          'Curriculum Development',
+        ]}
       />
 
       <ProjectCard
-        title="AXI Peripheral Verification"
-        description="Protocol and register verification for AXI4-Lite peripherals."
-        image="/images/axi-verification/waveform.png"
-        imageAlt="AXI simulation waveform"
-        href="/projects/axi-verification/"
-        technologies={['AXI VIP', 'SystemVerilog', 'XSim']}
+        title="FPGA Autonomous Robot"
+        description="SystemVerilog autonomous controller using a Zynq-7000 SoC, ultrasonic sensing, infrared boundary detection, PWM motor control, and finite-state-machine navigation."
+        image="/images/FPGA_Bot.jpeg"
+        imageAlt="FPGA autonomous robot"
+        href="/projects/fpga-autonomous-robot/"
+        technologies={[
+          'SystemVerilog',
+          'Vivado',
+          'Zynq-7000',
+          'PWM',
+        ]}
       />
 
       <ProjectCard
         title="BCG Data Acquisition PCB"
-        description="Mixed-signal PCB design, bring-up, measurement, and validation."
-        image="/images/bcg-pcb/pcb.jpg"
-        imageAlt="BCG data acquisition PCB"
+        description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a BCG data-acquisition platform."
+        image="/images/bcg-pcb/BCG_PCB1.jpg"
+        imageAlt="Mixed-signal BCG data acquisition PCB"
         href="/projects/bcg-pcb/"
-        technologies={['PCB', 'Mixed Signal', 'Validation']}
+        technologies={[
+          'PCB Design',
+          'Mixed Signal',
+          'Oscilloscope',
+          'Validation',
+        ]}
       />
 
       <ProjectCard
         title="ESP32-C6 Sensor Web Server"
-        description="Embedded sensor platform with Wi-Fi browser monitoring."
+        description="Wi-Fi-enabled embedded monitoring platform that collects sensor measurements and displays them through a browser-based dashboard."
         image="/images/esp32-server/dashboard.png"
-        imageAlt="ESP32 sensor dashboard"
+        imageAlt="ESP32-C6 sensor web dashboard"
         href="/projects/esp32-web-server/"
-        technologies={['ESP32-C6', 'C++', 'I2C']}
+        technologies={[
+          'ESP32-C6',
+          'C++',
+          'I2C',
+          'HTML',
+        ]}
       />
     </div>
   </section>
