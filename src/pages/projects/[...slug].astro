@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'fpga-autonomous-robot' } },
+    { params: { slug: 'bcg-pcb' } },
+    { params: { slug: 'github-pages-website' } },
+    { params: { slug: 'esp32-web-server' } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<BaseLayout title="Project Coming Soon | Luis Leon Pineda">
+  <section class="page-header container">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Project page coming soon</h1>
+  </section>
+
+  <article class="page-content container">
+    <section>
+      <p class="hero-description">
+        This project page is still being prepared. The content, technical details,
+        and supporting materials are being added to the portfolio.
+      </p>
+
+      <div class="button-row">
+        <a class="button primary-button" href="/projects/">
+          Back to Projects
+        </a>
+
+        <a class="button secondary-button" href="/">
+          Return Home
+        </a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

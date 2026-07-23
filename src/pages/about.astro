@@ -5,34 +5,118 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout title="About | Luis Leon Pineda">
   <section class="page-header container">
     <p class="eyebrow">About Me</p>
-    <h1>Electrical engineering through design, testing, and debugging</h1>
+    <h1>Building reliable systems from concept through validation</h1>
   </section>
 
-  <article class="page-content container">
-    <p>
-      My engineering experience combines FPGA development, embedded
-      programming, mixed-signal electronics, PCB validation, and hardware
-      troubleshooting.
-    </p>
+  <article class="about-page container">
+    <div class="about-introduction">
+      <div class="about-photo-wrapper">
+        <img
+          class="about-photo"
+          src="/images/headshot/Luis.jpeg"
+          alt="Professional headshot of Luis Leon Pineda"
+        />
+      </div>
 
-    <p>
-      I enjoy working across the complete development process, from defining
-      requirements and designing an architecture to implementing, testing,
-      measuring, and debugging the finished system.
-    </p>
+      <div class="about-summary">
+      <p>
+        I am an electrical engineer with hands-on experience developing,
+        integrating, and validating FPGA-based systems, embedded platforms,
+        mixed-signal electronics, and board-level hardware. My work has included
+        AMD/Xilinx Zynq-7000 platforms, SystemVerilog development, AXI-based
+        peripheral integration, embedded C and C++, and FPGA hardware bring-up.
+      </p>
 
-    <section>
-      <h2>Core skills</h2>
+      <p>
+        I have designed, assembled, and tested mixed-signal PCBs for biomedical data
+        acquisition, performed system-level debugging with oscilloscopes and logic
+        analyzers, and developed repeatable verification procedures for both
+        simulation and physical hardware. My previous automotive experience also
+        strengthened my skills in electrical diagnostics, root-cause analysis,
+        component integration, and post-repair validation.
+      </p>
+
+      <p>
+        I enjoy working across the full engineering lifecycle, from requirements,
+        design, and prototyping through integration, testing, documentation, and
+        deployment. I have also led an eight-person senior design team in developing
+        an educational FPGA platform, managing system integration, bitstream
+        releases, hardware validation, and technical documentation.
+      </p>  
+      </div>
+    </div>
+
+    <section class="about-section">
+      <h2>Core Skills</h2>
 
       <ul>
-        <li>SystemVerilog and Verilog</li>
-        <li>FPGA design and verification</li>
-        <li>Zynq-7000 and AXI4-Lite</li>
-        <li>Embedded C and C++</li>
-        <li>PCB design and hardware bring-up</li>
-        <li>Oscilloscopes and logic analyzers</li>
-        <li>Vivado, Vitis, XSim, KiCad, LTspice, and MATLAB</li>
+        <li>Building and debugging digital systems with SystemVerilog and Verilog</li>
+        <li>Designing, integrating, and verifying FPGA-based systems</li>
+        <li>Working with Zynq-7000 devices and ARM-based embedded platforms</li>
+        <li>Connecting and controlling hardware through AXI4 and AXI4-Lite</li>
+        <li>Developing embedded applications in C and C++</li>
+        <li>Designing PCBs and bringing new hardware prototypes to life</li>
+        <li>Using oscilloscopes and logic analyzers to troubleshoot hardware</li>
+        <li>Working with Vivado, Vitis, XSim, KiCad, LTspice, and MATLAB</li>
       </ul>
+    </section>
+
+    <section class="about-section awards-section">
+      <h2>Awards & Recognition</h2>
+
+      <div class="award-grid">
+        <article class="award-card award-card-featured">
+          <div class="award-featured-layout">
+            <img
+              class="award-image"
+              src="/images/Group_pic_Industry_Choice.jpeg"
+              alt="Industry Choice award recognition photo"
+            />
+
+            <div class="award-content">
+              <p class="award-year">2026</p>
+              <h3>Industry Choice Electrical Engineering</h3>
+              <p>
+                Recognized by visiting industry professionals as the top capstone project at the senior design showcase.
+              </p>
+              <p class="award-link">
+                <a href="https://www.linkedin.com/posts/txstengineering_last-tuesday-isoe-hosted-our-annual-senior-ugcPost-7460824669852635136-u2j-?utm_source=share&utm_medium=member_desktop&rcm=ACoAABKLeDIBtFDcGh2MiMe20QwA1iJjVNKxVFA" target="_blank" rel="noreferrer">
+                  View school post
+                </a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="award-card">
+          <p class="award-year">Spring 2025</p>
+          <h3>Dean's List</h3>
+          <p>
+            Named to the Dean’s List for outstanding academic performance
+            during the Spring 2025 semester.
+          </p>
+          <p class="award-link">
+            <a href="https://txstate.meritpages.com/stories/Luis-Leon-Pineda-Named-to-Texas-State-University-s-Spring-2025-Dean-s-List/167204610?" target="_blank" rel="noreferrer">
+              View Merit Pages profile
+            </a>
+          </p>
+        </article>
+
+        <article class="award-card">
+          <p class="award-year">Fall 2025</p>
+          <h3>Dean's List</h3>
+          <p>
+            Named to the Dean’s List for outstanding academic performance
+            during the Fall 2025 semester.
+          </p>
+          <p class="award-link">
+            <a href="https://txstate.meritpages.com/stories/Luis-Leon-Pineda-of-Wimberley-Named-to-Texas-State-University-s-Fall-2025-Dean-s-List/177016992?" target="_blank" rel="noreferrer">
+              View Merit Pages profile
+            </a>
+          </p>
+        </article>
+
+      </div>
     </section>
   </article>
 </BaseLayout>
