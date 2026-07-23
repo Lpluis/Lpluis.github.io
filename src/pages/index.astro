@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<BaseLayout title="Luis Leon | Electrical Engineer">
+<BaseLayout title="Luis Leon  Pineda| Electrical Engineer">
   <section class="hero container">
     <div class="hero-content">
       <p class="eyebrow">Electrical Engineer</p>
@@ -13,9 +13,9 @@ import ProjectCard from '../components/ProjectCard.astro';
       </h1>
 
       <p class="hero-description">
-        I design, integrate, test, and debug FPGA-based systems,
-        embedded platforms, mixed-signal electronics, and board-level
-        hardware.
+        I develop and validate FPGA and embedded systems, integrating digital logic, 
+        firmware, mixed-signal hardware, and board-level interfaces from concept 
+        through bring-up and verification.
       </p>
 
       <div class="button-row">
@@ -45,11 +45,29 @@ import ProjectCard from '../components/ProjectCard.astro';
       </p>
     </div>
 
+
     <div class="project-grid">
+      <ProjectCard
+        title="Capstone FPGA Curriculum Platform"
+        description="Educational FPGA platform designed to give engineering students practical experience with digital design, embedded systems, and hardware/software integration. The project combined reusable SystemVerilog modules, AXI-based peripherals, guided laboratory procedures, technical documentation, and hardware demonstrations on a Zynq-7000 development board."
+        image="/images/CoraZ7.jpeg"
+        imageAlt="Zynq-7000 FPGA curriculum platform developed for hands-on engineering education"
+        href="/projects/capstone-fpga-curriculum-platform/"
+        technologies={[
+          'SystemVerilog',
+          'Zynq-7000',
+          'AXI4-Lite',
+          'FPGA Verification',
+          'Vivado',
+          'Embedded C',
+          'Curriculum Development',
+        ]}
+      />
+
       <ProjectCard
         title="FPGA Autonomous Robot"
         description="SystemVerilog autonomous controller using a Zynq-7000 SoC, ultrasonic sensing, infrared boundary detection, PWM motor control, and finite-state-machine navigation."
-        image="/images/fpga-robot/robot.jpg"
+        image="/images/FPGA_Bot.jpeg"
         imageAlt="FPGA autonomous robot"
         href="/projects/fpga-autonomous-robot/"
         technologies={[
@@ -57,20 +75,6 @@ import ProjectCard from '../components/ProjectCard.astro';
           'Vivado',
           'Zynq-7000',
           'PWM',
-        ]}
-      />
-
-      <ProjectCard
-        title="AXI Peripheral Verification"
-        description="AXI4-Lite verification environment for GPIO, I2C, SPI, and PWM peripherals using AXI VIP, register transactions, simulation, and protocol testing."
-        image="/images/axi-verification/waveform.png"
-        imageAlt="AXI verification simulation waveform"
-        href="/projects/axi-verification/"
-        technologies={[
-          'AXI4-Lite',
-          'AXI VIP',
-          'SystemVerilog',
-          'XSim',
         ]}
       />
 
