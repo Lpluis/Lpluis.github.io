@@ -71,6 +71,22 @@ import ProjectCard from '../components/ProjectCard.astro';
       />
 
       <ProjectCard
+        title="AI-Assisted Engineering Portfolio"
+        description="A living Astro and GitHub Pages project I use to learn AI-assisted development, VS Code, HTML, CSS, Git, debugging, accessibility, and iterative web design while documenting my engineering work."
+        image="/images/githubwebpage/Webpage.jpg"
+        imageAlt="Luis Leon Pineda engineering portfolio displayed in a web browser"
+        href="/projects/github-pages-website/"
+        technologies={[
+          'Astro',
+          'HTML',
+          'CSS',
+          'VS Code',
+          'GitHub Pages',
+          'AI-Assisted Development',
+        ]}
+      />
+
+      <ProjectCard
         title="FPGA Autonomous Robot"
         description="SystemVerilog autonomous controller using a Zynq-7000 SoC, infrared boundary detection, PWM motor control, and finite-state-machine navigation."
         image="/images/FPGA_Bot.jpeg"
@@ -98,21 +114,6 @@ import ProjectCard from '../components/ProjectCard.astro';
         ]}
       />
 
-      <ProjectCard
-        title="AI-Assisted Engineering Portfolio"
-        description="A living Astro and GitHub Pages project I use to learn AI-assisted development, VS Code, HTML, CSS, Git, debugging, accessibility, and iterative web design while documenting my engineering work."
-        image="/images/githubwebpage/Webpage.jpg"
-        imageAlt="Luis Leon Pineda engineering portfolio displayed in a web browser"
-        href="/projects/github-pages-website/"
-        technologies={[
-          'Astro',
-          'HTML',
-          'CSS',
-          'VS Code',
-          'GitHub Pages',
-          'AI-Assisted Development',
-        ]}
-      />
     </div>
   </section>
 </BaseLayout>
