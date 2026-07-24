@@ -1,3 +1,10 @@
+/* ================================================================
+   Site foundation
+   Used globally through src/layouts/BaseLayout.astro.
+   ================================================================ */
+
+/* Design tokens */
+
 :root {
   --background: #08111f;
   --surface: #111c2e;
@@ -9,6 +16,8 @@
   --border: #2b3a50;
   --maximum-width: 1150px;
 }
+
+/* Reset and base elements */
 
 * {
   box-sizing: border-box;
@@ -39,6 +48,11 @@ img {
   width: min(92%, var(--maximum-width));
   margin-inline: auto;
 }
+
+/* ================================================================
+   Shared site header and navigation
+   Used by src/components/Header.astro on every page.
+   ================================================================ */
 
 .site-header {
   position: sticky;
@@ -83,6 +97,11 @@ img {
   border-radius: 0.35rem;
   color: var(--accent) !important;
 }
+
+/* ================================================================
+   Shared typography and actions
+   Used across the home, contact, experience, projects, and capstone pages.
+   ================================================================ */
 
 .hero {
   display: flex;
@@ -165,6 +184,26 @@ h3 {
   color: var(--accent);
 }
 
+/* ================================================================
+   Home page and project listings
+   Used by src/pages/index.astro, src/pages/projects/index.astro,
+   and src/components/ProjectCard.astro.
+   ================================================================ */
+
+.construction-notice {
+  max-width: 760px;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.6rem;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--muted-text);
+}
+
+.construction-notice strong {
+  color: var(--accent);
+}
+
 .section {
   padding-block: 6rem;
 }
@@ -230,6 +269,11 @@ h3 {
   text-decoration: none;
 }
 
+/* ================================================================
+   Standard interior pages
+   Used by contact, experience, projects/[...slug], and projects index.
+   ================================================================ */
+
 .page-header {
   padding-top: 6rem;
   padding-bottom: 2rem;
@@ -249,12 +293,10 @@ h3 {
   color: var(--muted-text);
 }
 
-.project-hero-image {
-  width: 100%;
-  margin-top: 2rem;
-  border: 1px solid var(--border);
-  border-radius: 0.75rem;
-}
+/* ================================================================
+   Shared site footer
+   Used by src/components/Footer.astro on every page.
+   ================================================================ */
 
 .site-footer {
   padding-block: 2rem;
@@ -276,6 +318,8 @@ h3 {
 .footer-links a {
   color: var(--accent);
 }
+
+/* Shared navigation, project-listing, footer, and action responsiveness */
 
 @media (max-width: 800px) {
   .navigation {
@@ -310,7 +354,10 @@ h3 {
   }
 }
 
-/* Detailed project pages */
+/* ================================================================
+   Capstone project detail page
+   Used only by capstone-fpga-curriculum-platform.astro.
+   ================================================================ */
 
 .project-hero {
   display: grid;
@@ -325,44 +372,13 @@ h3 {
   max-width: 780px;
 }
 
-.work-in-progress {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  width: fit-content;
-  margin: 1.25rem 0 1.5rem;
-  padding: 0.9rem 1rem;
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
-  border-radius: 0.65rem;
-  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
-}
-
-.work-in-progress-dot {
-  flex: 0 0 auto;
-  width: 0.65rem;
-  height: 0.65rem;
-  margin-top: 0.35rem;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent) 18%, transparent);
-}
-
-.work-in-progress strong {
-  color: var(--text);
-}
-
-.work-in-progress p {
-  margin: 0.2rem 0 0;
-  color: var(--muted-text);
-  font-size: 0.95rem;
-}
-
 .project-hero-image {
   width: 100%;
+  margin-top: 2rem;
   min-height: 420px;
   border: 1px solid var(--border);
   border-radius: 0.8rem;
-  object-fit: cover;
+  object-fit: contain;
   background: var(--surface);
 }
 
@@ -493,6 +509,24 @@ h3 {
   border-radius: 0.75rem;
 }
 
+/* Figures that pair capstone images with explanatory captions */
+
+.project-figure {
+  margin: 2rem 0;
+}
+
+.project-figure .project-content-image {
+  margin: 0;
+}
+
+.project-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .results-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -528,6 +562,10 @@ h3 {
   margin: 0;
 }
 
+.project-gallery a {
+  display: block;
+}
+
 .project-gallery img {
   width: 100%;
   height: 250px;
@@ -535,6 +573,16 @@ h3 {
   border-radius: 0.7rem;
   object-fit: cover;
   background: var(--surface);
+}
+
+.project-gallery-diagram img,
+.project-gallery-contained img {
+  padding: 0.5rem;
+  object-fit: contain;
+}
+
+.project-gallery-wide {
+  grid-column: span 2;
 }
 
 .project-gallery figcaption {
@@ -579,6 +627,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .project-gallery-wide {
+    grid-column: span 1;
+  }
+
   .project-gallery img {
     height: auto;
   }
@@ -606,21 +658,16 @@ h3 {
   .project-hero-image {
     min-height: 260px;
   }
+
+  .project-figure figcaption {
+    text-align: left;
+  }
 }
 
-.construction-notice {
-  max-width: 760px;
-  margin-bottom: 2rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid var(--accent);
-  border-radius: 0.6rem;
-  background: rgba(56, 189, 248, 0.08);
-  color: var(--muted-text);
-}
-
-.construction-notice strong {
-  color: var(--accent);
-}
+/* ================================================================
+   About page
+   Used only by src/pages/about.astro.
+   ================================================================ */
 
 .about-page {
   padding-bottom: 6rem;
@@ -746,7 +793,11 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
-/* Experience page */
+
+/* ================================================================
+   Experience page
+   Used only by src/pages/experience.astro.
+   ================================================================ */
 
 .experience-section {
   margin-bottom: 5rem;

@@ -2,75 +2,166 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const learningObjectives = [
-  'Introduce students to FPGA and digital-system design fundamentals.',
-  'Provide hands-on experience with SystemVerilog, Vivado, and Zynq-7000 hardware.',
-  'Demonstrate communication between programmable logic and embedded software.',
-  'Teach students how to integrate, configure, test, and debug AXI-based peripherals.',
-  'Connect classroom theory with hands-on exercises and physical hardware.',
+  'Introduce students to FPGA development using an industry-relevant Zynq-7000 SoC.',
+  'Connect HDL design and simulation with observable behavior on physical hardware.',
+  'Demonstrate communication between the ARM processing system and programmable logic.',
+  'Provide practical experience with AXI, GPIO, SPI, I2C, and PWM peripherals.',
+  'Teach repeatable FPGA build, deployment, verification, and debugging workflows.',
+  'Apply classroom concepts to a complete autonomous robotics application.',
 ];
 
 const technologies = [
   'SystemVerilog',
   'Zynq-7000',
+  'Cora Z7',
   'AXI4-Lite',
   'AXI VIP',
   'Vivado',
   'Vitis',
-  'XSIM',
-  'ARM',
+  'XSim',
   'Embedded C',
-  'I2C',
-  'SPI',
   'GPIO',
-  'PWM'
+  'SPI',
+  'I2C',
+  'PWM',
+  'SolidWorks',
 ];
 
 const contributions = [
-  'Coordinated an eight-person multidisciplinary project team.',
-  'Managed FPGA bitstream builds, releases, and hardware configurations.',
-  'Supported SystemVerilog module integration and AXI peripheral testing.',
-  'Developed simulation and hardware-validation procedures.',
-  'Created technical documentation and guided laboratory material.',
-  'Performed system-level debugging and stress testing.',
+  'Served as project manager for an eight-person engineering team.',
+  'Owned the master Vivado block design and XSA hardware-platform iterations.',
+  'Integrated AXI-connected GPIO, SPI, I2C, and PWM peripherals into the Zynq-7000 design.',
+  'Generated, versioned, validated, and deployed FPGA bitstream and XSA releases.',
+  'Maintained reproducible hardware configurations as subsystem requirements changed.',
+  'Assisted with AXI VIP testbench development and simulation for GPIO, PWM, SPI, and I2C.',
+  'Supported synthesis, implementation, hardware validation, and system-level debugging.',
+  'Designed the autonomous robot chassis and mechanical assembly in SolidWorks as an independent project extension.',
 ];
 
 const validationMethods = [
-  'SystemVerilog simulation with XSim',
-  'AXI register read and write testing',
-  'AXI VIP protocol verification',
-  'Peripheral-level hardware testing',
+  'Vivado block-design validation',
+  'Synthesis, implementation, and bitstream generation',
+  'XSA hardware-platform generation and deployment',
+  'SystemVerilog simulation using XSim',
+  'AXI VIP register transactions and protocol verification',
+  'GPIO, SPI, I2C, and PWM peripheral testing',
+  'ARM-to-programmable-logic communication testing',
   'Oscilloscope and logic-analyzer measurements',
-  'Repeatable laboratory procedure validation',
-  'Full-system integration and stress testing',
+  'Fabric-clock performance characterization',
+  'Full-system hardware integration testing',
+];
+
+const robotFeatures = [
+  'SystemVerilog-based movement and control logic',
+  'Infrared sensors for boundary detection',
+  'Time-of-flight sensors for object detection',
+  'PWM-controlled DC motors',
+  'H-bridge motor-control interfaces',
+  'Boundary-avoidance safety behavior',
+  'Autonomous search and movement behavior',
+  'Three-level mechanical chassis designed in SolidWorks',
+];
+
+const deploymentSteps = [
+  {
+    number: '01',
+    title: 'Integrate IP',
+    description:
+      'Incorporate the required GPIO, SPI, I2C, PWM, reset, processing-system, and AXI interconnect blocks into the master Vivado design.',
+  },
+  {
+    number: '02',
+    title: 'Validate the Design',
+    description:
+      'Check block connections, clocking, resets, address assignments, interfaces, and design-rule requirements before implementation.',
+  },
+  {
+    number: '03',
+    title: 'Build the Hardware',
+    description:
+      'Run synthesis and implementation, resolve design issues, and generate the FPGA bitstream for the Cora Z7.',
+  },
+  {
+    number: '04',
+    title: 'Export and Deploy',
+    description:
+      'Export the XSA hardware platform, distribute the matching release files, and support validation by the software and testbench teams.',
+  },
+];
+
+const systemComponents = [
+  {
+    title: 'Processing System',
+    description:
+      'The ARM Cortex-A9 processing system ran embedded C applications, managed high-level control, and accessed peripherals through memory-mapped AXI interfaces.',
+  },
+  {
+    title: 'Programmable Logic',
+    description:
+      'The FPGA fabric contained AXI-connected GPIO, SPI, I2C, PWM, reset, interconnect, and custom hardware blocks.',
+  },
+  {
+    title: 'Peripheral Hardware',
+    description:
+      'External hardware included OLED displays, an inertial sensor, RGB LEDs, buttons, motor drivers, DC motors, and a custom peripheral PCB.',
+  },
+  {
+    title: 'Verification Environment',
+    description:
+      'SystemVerilog testbenches and AXI VIP generated register transactions and verified peripheral behavior before hardware deployment.',
+  },
+];
+
+const deliverables = [
+  {
+    title: 'FPGA Hardware Platform',
+    description:
+      'A complete Zynq-7000 block design integrating the processing system, programmable logic, AXI interconnect, and peripheral IP.',
+  },
+  {
+    title: 'Bitstream and XSA Releases',
+    description:
+      'Version-controlled FPGA deployment files that kept the hardware and embedded-software environments synchronized.',
+  },
+  {
+    title: 'Simulation Environment',
+    description:
+      'Testbenches and AXI VIP transactions for validating GPIO, SPI, I2C, and PWM register interfaces.',
+  },
+  {
+    title: 'Embedded Applications',
+    description:
+      'Embedded C examples for configuring peripherals and demonstrating communication between the ARM processor and FPGA fabric.',
+  },
+  {
+    title: 'Peripheral PCB',
+    description:
+      'A custom board connecting sensors, displays, LEDs, motor-control hardware, and external interfaces to the Cora Z7.',
+  },
+  {
+    title: 'Instructional Documentation',
+    description:
+      'Test procedures, operating instructions, block diagrams, address maps, and supporting material for future students.',
+  },
 ];
 ---
 
 <BaseLayout
-  title="HDL FPGA 404: BOT_Not_Found | Luis Leon Pineda"
-  description="Our team is designing an educational development board tailored for Texas State University’s HDL course to enhance hands-on learning in digital systems. We will implement and simulate IIC, SPI, 
-  and PWM interfaces on the CORA Z7 FPGA using Xilinx tools like Vivado and Vitis. The final deliverable will be a functioning prototype that supports both physical and digital simulations. 
-  This project aims to improve student retention and real-world readiness by integrating practical hardware experience into the curriculum."
+  title="404: Bot Not Found | Luis Leon Pineda"
+  description="An educational FPGA platform developed on the Digilent Cora Z7 to teach HDL design, AXI peripheral integration, embedded software, simulation, hardware deployment, and autonomous robotics."
 >
   <!-- Project hero -->
   <section class="project-hero container">
     <div class="project-hero-content">
       <p class="eyebrow">Senior Design Capstone Project</p>
 
-      <aside class="work-in-progress" aria-label="Page status">
-        <span class="work-in-progress-dot" aria-hidden="true"></span>
-        <div>
-          <strong>Work in progress</strong>
-          <p>This project page is still being built. Check back soon for updates.</p>
-        </div>
-      </aside>
-
-      <h1>HDL FPGA 404: BOT_Not_Found</h1>
+      <h1>404: Bot Not Found</h1>
 
       <p class="hero-description">
-        An educational FPGA platform designed to give engineering students
-        practical experience with digital logic, embedded systems,
-        hardware/software integration, and verification using a Zynq-7000
-        development board.
+        An educational FPGA and embedded-systems platform developed to give
+        engineering students hands-on experience with HDL design, AXI
+        peripherals, simulation, hardware deployment, and system integration
+        using the Digilent Cora Z7.
       </p>
 
       <div class="technology-list project-technologies">
@@ -86,18 +177,23 @@ const validationMethods = [
           Educational Purpose
         </a>
 
-        <a class="button secondary-button" href="#implementation">
-          View Implementation
+        <a class="button secondary-button" href="#my-role">
+          My Contribution
         </a>
-        <a 
+
+        <a class="button secondary-button" href="#autonomous-robot">
+          Autonomous Robot
+        </a>
+
+        <a
           class="button secondary-button"
-          href="/documents/E2.07Poster.pdf"
-          target ="_blank"
-          rel="noopener nereferrer"
+          href="/documents/404-bot-not-found-poster.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           View Poster
         </a>
-        <!-- Replace # with your repository or documentation link -->
+
         <a
           class="button secondary-button"
           href="https://github.com/Lpluis/Capstone_Project"
@@ -111,8 +207,8 @@ const validationMethods = [
 
     <img
       class="project-hero-image"
-      src="/images/capstone-platform/platform.jpg"
-      alt="Zynq-7000 FPGA curriculum platform developed for engineering education"
+      src="/images/capstone-platform/Complete_Cora_PCB.jpg"
+      alt="Complete 404 Bot Not Found platform with the Cora Z7, custom peripheral PCB, IMU sensor, and OLED displays"
     />
   </section>
 
@@ -126,17 +222,17 @@ const validationMethods = [
 
       <article class="project-fact">
         <p class="project-fact-label">Primary Purpose</p>
-        <p>Engineering Education</p>
+        <p>Hands-on FPGA Education</p>
       </article>
 
       <article class="project-fact">
         <p class="project-fact-label">Platform</p>
-        <p>Cora Z7, Zynq-7000 SoC</p>
+        <p>Digilent Cora Z7</p>
       </article>
 
       <article class="project-fact">
-        <p class="project-fact-label">Team Size</p>
-        <p>Eight Students</p>
+        <p class="project-fact-label">My Role</p>
+        <p>Project Manager and XSA Integration Owner</p>
       </article>
     </div>
   </section>
@@ -146,24 +242,51 @@ const validationMethods = [
     <section class="project-section" id="overview">
       <div class="project-section-heading">
         <p class="eyebrow">Overview</p>
-        <h2>Bridging classroom theory and practical FPGA development</h2>
+        <h2>Bringing HDL concepts out of simulation and onto physical hardware</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          HDL FPGA 404: BOT_Not_Found was developed as an
-          instructional system for introducing engineering students to FPGA
-          design, embedded programming, AXI communication, peripheral
-          integration, verification, and hardware debugging.
+          404: Bot Not Found was an eight-person senior design project centered
+          on developing a reusable FPGA learning platform for Texas State
+          University’s Digital Systems Using HDL course.
         </p>
 
         <p>
-          Rather than functioning only as a technical demonstration, the
-          platform was designed as a reusable educational resource. It
-          combined working hardware, reusable HDL modules, embedded software,
-          guided laboratory procedures, technical documentation, and
-          verification examples into one structured learning environment.
+          The platform was built around the Digilent Cora Z7, which combines
+          Zynq-7000 programmable logic with an ARM processing system. This
+          architecture allowed students to study HDL development, embedded
+          programming, AXI communication, peripheral integration, simulation,
+          and hardware verification in one environment.
         </p>
+
+        <p>
+          The system integrated GPIO, SPI, I2C, and PWM peripherals through an
+          AXI-based architecture. These interfaces connected the Cora Z7 to
+          external sensors, OLED displays, LEDs, motor-control hardware, and a
+          custom peripheral PCB.
+        </p>
+
+        <p>
+          Testbenches, embedded applications, bitstream releases, hardware
+          platforms, test procedures, and technical documentation were
+          developed alongside the hardware so that future students could
+          reproduce, study, and expand the system.
+        </p>
+
+        <figure class="project-figure">
+          <img
+            class="project-content-image"
+            src="/images/capstone-platform/Block_Diagram_404.png"
+            alt="Complete 404 Bot Not Found project block diagram showing subsystem ownership across the team"
+          />
+
+          <figcaption>
+            Complete project block diagram mapping the HDL, FPGA IP, ARM,
+            peripheral PCB, sensors, displays, LEDs, and motor-control
+            subsystems to the team members responsible for them.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -171,21 +294,31 @@ const validationMethods = [
     <section class="project-section" id="educational-purpose">
       <div class="project-section-heading">
         <p class="eyebrow">Educational Purpose</p>
-        <h2>A hands-on platform for learning FPGA and embedded-system design</h2>
+        <h2>A reusable platform for learning through design, deployment, and testing</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          The primary goal of the project was to reduce the gap between
-          theoretical digital-design coursework and the practical skills
-          required to build and debug a complete FPGA-based system.
+          The project addressed the gap between learning HDL syntax in a
+          classroom and developing a complete FPGA-based system. Students
+          could follow a practical engineering workflow: create digital logic,
+          simulate its behavior, integrate IP, build the design, deploy it to
+          hardware, and verify the result.
         </p>
 
         <p>
-          Students could use the platform to progress from basic HDL concepts
-          to complete hardware/software integration. Each laboratory exercise
-          was intended to introduce a focused engineering concept while also
-          contributing to a larger working system.
+          The platform also demonstrated the relationship between software and
+          programmable hardware. Embedded C applications running on the ARM
+          processor accessed AXI-connected peripherals implemented in the FPGA
+          fabric, allowing students to see how firmware and digital logic work
+          together.
+        </p>
+
+        <p>
+          Instead of presenting the system only as a finished demonstration,
+          the project provided reusable hardware, software, verification
+          examples, and instructional documentation that could support future
+          laboratory exercises.
         </p>
 
         <div class="learning-objectives">
@@ -202,207 +335,157 @@ const validationMethods = [
       </div>
     </section>
 
-    <!-- Learning progression -->
-    <section class="project-section">
-      <div class="project-section-heading">
-        <p class="eyebrow">Curriculum Structure</p>
-        <h2>Progressive learning from HDL fundamentals to system integration</h2>
-      </div>
-
-      <div class="learning-path-grid">
-        <article class="learning-step">
-          <span class="learning-step-number">01</span>
-          <h3>Digital Logic</h3>
-          <p>
-            Students begin with combinational logic, sequential logic,
-            registers, counters, and finite-state machines.
-          </p>
-        </article>
-
-        <article class="learning-step">
-          <span class="learning-step-number">02</span>
-          <h3>SystemVerilog Design</h3>
-          <p>
-            Students implement reusable HDL modules and test their behavior
-            through simulation.
-          </p>
-        </article>
-
-        <article class="learning-step">
-          <span class="learning-step-number">03</span>
-          <h3>AXI Peripherals</h3>
-          <p>
-            Students learn memory-mapped communication, register interfaces,
-            address maps, and peripheral control.
-          </p>
-        </article>
-
-        <article class="learning-step">
-          <span class="learning-step-number">04</span>
-          <h3>Embedded Software</h3>
-          <p>
-            Students use embedded C to configure and communicate with
-            peripherals through the Zynq processing system.
-          </p>
-        </article>
-
-        <article class="learning-step">
-          <span class="learning-step-number">05</span>
-          <h3>Verification</h3>
-          <p>
-            Students validate functionality through simulation, AXI
-            transactions, measurements, and structured test procedures.
-          </p>
-        </article>
-
-        <article class="learning-step">
-          <span class="learning-step-number">06</span>
-          <h3>System Integration</h3>
-          <p>
-            Students combine programmable logic, embedded software, and
-            external hardware into a complete working platform.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Architecture -->
-    <section class="project-section">
+    <!-- System architecture -->
+    <section class="project-section" id="architecture">
       <div class="project-section-heading">
         <p class="eyebrow">System Architecture</p>
-        <h2>Reusable hardware and software building blocks</h2>
+        <h2>Connecting the ARM processor, FPGA fabric, and external hardware</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          The platform used the Zynq-7000 architecture to demonstrate the
-          relationship between the processing system and programmable logic.
-          AXI-based peripherals provided practical examples of
-          hardware/software communication.
+          The platform used the dual architecture of the Zynq-7000 SoC. The ARM
+          processing system handled embedded software and high-level control,
+          while the programmable logic contained AXI-connected peripheral
+          interfaces and custom hardware.
         </p>
 
-        <img
-          class="project-content-image"
-          src="/images/capstone-platform/architecture.png"
-          alt="Block diagram of the FPGA curriculum platform architecture"
-        />
+        <p>
+          AXI SmartConnect provided memory-mapped communication between the
+          processing system and programmable-logic peripherals. The complete
+          platform connected these interfaces to displays, sensors, LEDs,
+          buttons, motor drivers, DC motors, and a custom PCB.
+        </p>
+
+        <figure class="project-figure">
+          <img
+            class="project-content-image"
+            src="/images/capstone-platform/SimplifiedBlockDiagram.png"
+            alt="Simplified block diagram of the Cora Z7 processing system, AXI interconnect, and FPGA peripherals"
+          />
+
+          <figcaption>
+            Simplified architecture showing the ARM Cortex-A9 and AXI VIP
+            communicating with GPIO, SPI, PWM, and I2C peripherals through AXI
+            SmartConnect.
+          </figcaption>
+        </figure>
 
         <div class="architecture-grid">
-          <article class="architecture-card">
-            <h3>Processing System</h3>
-            <p>
-              Embedded C applications configured peripherals, performed
-              register transactions, and supported interactive hardware
-              exercises.
-            </p>
-          </article>
-
-          <article class="architecture-card">
-            <h3>Programmable Logic</h3>
-            <p>
-              SystemVerilog modules implemented custom logic, interfaces,
-              controllers, and AXI-accessible peripherals.
-            </p>
-          </article>
-
-          <article class="architecture-card">
-            <h3>Peripheral Interfaces</h3>
-            <p>
-              GPIO, I²C, SPI, PWM, memory, and sensor interfaces demonstrated
-              common embedded-system communication methods.
-            </p>
-          </article>
-
-          <article class="architecture-card">
-            <h3>Verification Environment</h3>
-            <p>
-              Simulation, AXI VIP, register testing, and physical measurements
-              provided repeatable verification examples.
-            </p>
-          </article>
+          {
+            systemComponents.map((component) => (
+              <article class="architecture-card">
+                <h3>{component.title}</h3>
+                <p>{component.description}</p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <!-- Implementation -->
-    <section class="project-section" id="implementation">
+    <!-- Vivado integration -->
+    <section class="project-section" id="fpga-integration">
       <div class="project-section-heading">
-        <p class="eyebrow">Implementation</p>
-        <h2>Integrated instructional hardware, software, and documentation</h2>
+        <p class="eyebrow">FPGA Integration</p>
+        <h2>A master hardware platform for every project subsystem</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          The project included more than the FPGA design itself. The completed
-          educational package was intended to provide everything required for
-          an instructor or student to reproduce, operate, study, and extend
-          the system.
+          The Vivado block design brought together the Zynq processing system,
+          AXI SmartConnect, processor resets, AXI Verification IP, GPIO
+          interfaces, SPI controllers, an I2C controller, and custom PWM
+          peripherals.
+        </p>
+
+        <p>
+          Each peripheral was assigned a memory address that allowed embedded
+          software and testbench transactions to access its control and status
+          registers. As the individual subsystem designs changed, the master
+          hardware platform had to be updated and rebuilt while preserving
+          clocking, reset behavior, address mapping, and external pin routing.
+        </p>
+
+        <figure class="project-figure">
+          <img
+            class="project-content-image"
+            src="/images/capstone-platform/VivadoBlockDiagram.jpg"
+            alt="Detailed master Vivado block design used to generate the Cora Z7 hardware platform"
+          />
+
+          <figcaption>
+            In-depth master Vivado block design showing the processing system,
+            AXI infrastructure, resets, verification IP, and connected FPGA
+            peripherals used to generate the bitstream and XSA platform.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="project-section" id="implementation">
+      <div class="project-section-heading">
+        <p class="eyebrow">Project Deliverables</p>
+        <h2>Hardware, software, verification, and documentation</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The completed project extended beyond a single FPGA design. It
+          included the hardware platform, embedded applications, physical
+          peripherals, simulation tools, deployment files, and instructional
+          resources required to reproduce and understand the system.
         </p>
 
         <div class="deliverables-grid">
-          <article class="deliverable-card">
-            <h3>Reusable HDL Modules</h3>
-            <p>
-              Modular SystemVerilog components that could be studied,
-              simulated, modified, and reused in laboratory exercises.
-            </p>
-          </article>
-
-          <article class="deliverable-card">
-            <h3>Embedded Applications</h3>
-            <p>
-              Embedded C examples for configuring peripherals and
-              demonstrating hardware/software communication.
-            </p>
-          </article>
-
-          <article class="deliverable-card">
-            <h3>Laboratory Procedures</h3>
-            <p>
-              Structured instructions guiding students through setup,
-              implementation, testing, and troubleshooting.
-            </p>
-          </article>
-
-          <article class="deliverable-card">
-            <h3>Technical Documentation</h3>
-            <p>
-              Architecture descriptions, setup instructions, address maps,
-              testing procedures, and expected results.
-            </p>
-          </article>
-
-          <article class="deliverable-card">
-            <h3>Simulation Examples</h3>
-            <p>
-              Testbenches and waveform examples showing expected timing,
-              transactions, and peripheral behavior.
-            </p>
-          </article>
-
-          <article class="deliverable-card">
-            <h3>Hardware Demonstrations</h3>
-            <p>
-              Working demonstrations that allowed students to connect
-              simulated behavior with physical system operation.
-            </p>
-          </article>
+          {
+            deliverables.map((deliverable) => (
+              <article class="deliverable-card">
+                <h3>{deliverable.title}</h3>
+                <p>{deliverable.description}</p>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- My role -->
-    <section class="project-section">
+    <section class="project-section" id="my-role">
       <div class="project-section-heading">
-        <p class="eyebrow">My Role</p>
-        <h2>Project management, integration, verification, and documentation</h2>
+        <p class="eyebrow">My Contribution</p>
+        <h2>Project leadership, FPGA integration, deployment, and verification</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          I served as the project manager while also contributing directly to
-          the technical implementation, integration, testing, and release of
-          the FPGA platform.
+          I served as the project manager while also owning the master FPGA
+          hardware-platform integration and deployment workflow. My technical
+          responsibility was to maintain the Vivado design that brought the
+          team’s peripheral subsystems together into a deployable Zynq-7000
+          configuration.
+        </p>
+
+        <p>
+          As subsystem requirements evolved, I incorporated the necessary AXI
+          IP blocks, validated connections and address assignments, ran
+          synthesis and implementation, generated the FPGA bitstream, and
+          exported the XSA hardware platform used by the embedded-software
+          team.
+        </p>
+
+        <p>
+          I maintained and distributed matching hardware releases so the
+          bitstream, block design, XSA platform, testbench environment, and
+          embedded applications remained aligned across project revisions.
+        </p>
+
+        <p>
+          I also assisted with the HDL verification effort by helping develop,
+          execute, and debug AXI VIP simulations for the GPIO, PWM, SPI, and
+          I2C peripherals. This work helped confirm register-level
+          communication and peripheral behavior before physical deployment.
         </p>
 
         <ul class="project-list">
@@ -415,33 +498,225 @@ const validationMethods = [
       </div>
     </section>
 
-    <!-- Verification -->
-    <section class="project-section">
+    <!-- Deployment workflow -->
+    <section class="project-section" id="deployment">
       <div class="project-section-heading">
-        <p class="eyebrow">Verification and Validation</p>
-        <h2>Confirming both technical operation and instructional usability</h2>
+        <p class="eyebrow">Deployment Workflow</p>
+        <h2>Moving subsystem updates into a reproducible FPGA release</h2>
+      </div>
+
+      <div class="learning-path-grid">
+        {
+          deploymentSteps.map((step) => (
+            <article class="learning-step">
+              <span class="learning-step-number">{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+<!-- Verification -->
+<section class="project-section" id="verification">
+  <div class="project-section-heading">
+    <p class="eyebrow">Verification and Validation</p>
+    <h2>Testing the design from AXI transactions to physical peripherals</h2>
+  </div>
+
+  <div class="project-section-content">
+    <p>
+      Verification was performed at multiple levels. Individual
+      peripherals were first exercised through simulation and register
+      transactions before being validated through embedded software and
+      physical hardware.
+    </p>
+
+    <p>
+      The testbench environment instantiated the Cora Z7 design wrapper and
+      used AXI Verification IP as the master interface. AXI VIP generated
+      register transactions through AXI SmartConnect to exercise the
+      memory-mapped GPIO, SPI, I2C, and PWM peripherals.
+    </p>
+
+    <p>
+      Hardware validation confirmed address mapping, register behavior,
+      signal routing, and communication with external devices.
+      Oscilloscopes and logic analyzers were used to inspect signals and
+      troubleshoot timing, interface, and integration problems.
+    </p>
+
+    <ul class="project-list">
+      {
+        validationMethods.map((method) => (
+          <li>{method}</li>
+        ))
+      }
+    </ul>
+
+    <figure class="project-figure">
+      <img
+        class="project-content-image"
+        src="/images/capstone-platform/TESTBenches.jpg"
+        alt="AXI VIP simulation waveform used to verify FPGA peripherals"
+      />
+
+      <figcaption>
+        Example XSim waveform used to inspect register transactions and
+        peripheral responses.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+    <!-- Fabric clock testing -->
+    <section class="project-section" id="clock-testing">
+      <div class="project-section-heading">
+        <p class="eyebrow">Performance Testing</p>
+        <h2>Characterizing peripheral operation across fabric-clock revisions</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          Verification addressed two goals: confirming that the hardware
-          operated correctly and ensuring that the instructional procedures
-          could be followed consistently by students.
+          I generated and tested multiple hardware-platform revisions using
+          different programmable-logic fabric-clock frequencies. Peripheral
+          operation and simulation were evaluated at 25, 100, 150, 200, and
+          250 MHz.
         </p>
 
-        <ul class="project-list">
-          {
-            validationMethods.map((method) => (
-              <li>{method}</li>
-            ))
-          }
-        </ul>
+        <p>
+          The platform’s communication interfaces operated successfully at 25,
+          100, and 150 MHz. At 200 and 250 MHz, SPI communication failed while
+          I2C and the other interfaces continued to operate. The results
+          identified a practical limitation involving the fabric clock, SPI
+          divider configuration, and connected peripheral requirements.
+        </p>
 
-        <img
-          class="project-content-image"
-          src="/images/capstone-platform/waveform.png"
-          alt="Simulation waveform used to verify the FPGA curriculum platform"
-        />
+        <div class="results-grid">
+          <article class="result-card">
+            <strong>25 MHz</strong>
+            <span>Peripheral and simulation tests passed</span>
+          </article>
+
+          <article class="result-card">
+            <strong>100 MHz</strong>
+            <span>Peripheral and simulation tests passed</span>
+          </article>
+
+          <article class="result-card">
+            <strong>150 MHz</strong>
+            <span>Peripheral and simulation tests passed</span>
+          </article>
+
+          <article class="result-card">
+            <strong>200+ MHz</strong>
+            <span>SPI hardware communication became unreliable</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Autonomous robot -->
+    <section class="project-section" id="autonomous-robot">
+      <div class="project-section-heading">
+        <p class="eyebrow">Independent Project Extension</p>
+        <h2>Extending the curriculum platform into an autonomous FPGA robot</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          Outside the core team deliverables, I continued developing the
+          platform as an autonomous robot. This extension demonstrated how the
+          same HDL, peripheral, verification, and hardware-integration concepts
+          could be applied to a complete physical system.
+        </p>
+
+        <p>
+          I designed the robot chassis and mechanical assembly in SolidWorks.
+          The three-level structure organized the motors, batteries, sensors,
+          Cora Z7, and project electronics while protecting the hardware and
+          maintaining access for testing and development.
+        </p>
+
+        <p>
+          The lower level supported the drive system and boundary sensors, the
+          middle level housed the batteries, and the upper level supported the
+          FPGA board, electronics, and ranging sensors.
+        </p>
+
+        <figure class="project-figure">
+          <img
+            class="project-content-image"
+            src="/images/capstone-platform/BotTesting.JPG"
+            alt="Functional testing of the autonomous FPGA robot on its test surface"
+          />
+
+          <figcaption>
+            Functional testing of the assembled robot's movement, sensors, and
+            boundary-detection behavior.
+          </figcaption>
+        </figure>
+
+        <div class="architecture-grid">
+          <article class="architecture-card">
+            <h3>Mechanical Design</h3>
+            <p>
+              A three-level robot chassis was modeled in SolidWorks around the
+              motors, sensors, batteries, Cora Z7, and project electronics.
+            </p>
+          </article>
+
+          <article class="architecture-card">
+            <h3>Boundary Detection</h3>
+            <p>
+              Infrared sensors detected operating-area boundaries and could
+              override movement commands to prevent the robot from leaving its
+              intended area.
+            </p>
+          </article>
+
+          <article class="architecture-card">
+            <h3>Object Detection</h3>
+            <p>
+              Time-of-flight ranging sensors supplied directional distance
+              information for autonomous search and movement decisions.
+            </p>
+          </article>
+
+          <article class="architecture-card">
+            <h3>Motor Control</h3>
+            <p>
+              FPGA-generated PWM and H-bridge control signals managed motor
+              direction, speed, stopping, and corrective movement.
+            </p>
+          </article>
+        </div>
+
+        <div class="learning-objectives">
+          <h3>Robot features</h3>
+
+          <ul class="project-list">
+            {
+              robotFeatures.map((feature) => (
+                <li>{feature}</li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <figure class="project-figure">
+          <img
+            class="project-content-image"
+            src="/images/capstone-platform/BotChasis.jpg"
+            alt="SolidWorks assembly of the autonomous FPGA robot chassis"
+          />
+
+          <figcaption>
+            SolidWorks assembly showing the three-level autonomous-robot
+            chassis and component arrangement.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -449,41 +724,40 @@ const validationMethods = [
     <section class="project-section">
       <div class="project-section-heading">
         <p class="eyebrow">Engineering Challenges</p>
-        <h2>Designing for both functionality and teachability</h2>
+        <h2>Coordinating a system that had to work technically and educationally</h2>
       </div>
 
       <div class="challenge-grid">
         <article class="challenge-card">
-          <h3>System Complexity</h3>
+          <h3>Changing Subsystem Requirements</h3>
           <p>
-            The platform needed enough technical depth to demonstrate
-            real-world FPGA development without overwhelming students who were
-            new to the tools and architecture.
+            The master FPGA platform required repeated updates as peripheral,
+            software, testbench, and PCB requirements evolved.
           </p>
         </article>
 
         <article class="challenge-card">
-          <h3>Repeatable Builds</h3>
+          <h3>Reproducible Releases</h3>
           <p>
-            FPGA projects, bitstreams, address maps, and software applications
-            needed to remain synchronized across multiple users and machines.
-          </p>
-        </article>
-
-        <article class="challenge-card">
-          <h3>Clear Documentation</h3>
-          <p>
-            Laboratory instructions had to explain tool setup, hardware
-            operation, expected behavior, and troubleshooting in a logical
-            sequence.
+            Bitstreams, XSA platforms, address maps, simulation wrappers, and
+            embedded applications had to remain synchronized.
           </p>
         </article>
 
         <article class="challenge-card">
           <h3>Verification Coverage</h3>
           <p>
-            The team needed to verify individual modules, AXI communication,
-            integrated behavior, and physical hardware operation.
+            The team needed to verify the individual IP blocks, AXI
+            transactions, embedded control, external peripherals, and complete
+            system behavior.
+          </p>
+        </article>
+
+        <article class="challenge-card">
+          <h3>Educational Clarity</h3>
+          <p>
+            The system needed to demonstrate realistic engineering concepts
+            while remaining understandable and reproducible for students.
           </p>
         </article>
       </div>
@@ -493,41 +767,53 @@ const validationMethods = [
     <section class="project-section">
       <div class="project-section-heading">
         <p class="eyebrow">Results</p>
-        <h2>A reusable educational foundation for future FPGA instruction</h2>
+        <h2>A deployable FPGA platform built for education and continued development</h2>
       </div>
 
       <div class="project-section-content">
         <p>
-          The final platform provided a working FPGA-based instructional
-          environment that combined hardware design, embedded software,
-          simulation, verification, documentation, and guided exercises.
+          The project produced a working Zynq-7000 hardware platform with
+          AXI-connected GPIO, SPI, I2C, and PWM peripherals, embedded
+          applications, simulation testbenches, a custom PCB, and documented
+          operating and testing procedures.
         </p>
 
         <p>
-          The project established a foundation that could be expanded with new
-          peripherals, laboratory exercises, verification examples, and
-          student projects in future courses.
+          The platform demonstrated a repeatable workflow from HDL and IP
+          integration through simulation, bitstream generation, XSA export,
+          embedded-software integration, and physical hardware validation.
+        </p>
+
+        <p>
+          The autonomous-robot extension provided a path for applying the
+          educational platform to sensing, motor control, safety logic,
+          mechanical design, and real-time physical behavior.
+        </p>
+
+        <p>
+          The project was recognized by visiting industry professionals as the
+          top capstone project presented at the senior design showcase.
         </p>
 
         <div class="results-grid">
           <article class="result-card">
             <strong>8</strong>
-            <span>Student team members</span>
+            <span>Engineering team members</span>
+          </article>
+
+          <article class="result-card">
+            <strong>4</strong>
+            <span>Primary peripheral interfaces</span>
           </article>
 
           <article class="result-card">
             <strong>FPGA + ARM</strong>
-            <span>Integrated learning environment</span>
+            <span>Hardware/software integration</span>
           </article>
 
           <article class="result-card">
-            <strong>AXI</strong>
-            <span>Memory-mapped peripheral architecture</span>
-          </article>
-
-          <article class="result-card">
-            <strong>Reusable</strong>
-            <span>Curriculum and laboratory foundation</span>
+            <strong>Simulation + Hardware</strong>
+            <span>Multi-level validation workflow</span>
           </article>
         </div>
       </div>
@@ -537,45 +823,156 @@ const validationMethods = [
     <section class="project-section">
       <div class="project-section-heading">
         <p class="eyebrow">Project Gallery</p>
-        <h2>Hardware, simulation, and instructional material</h2>
+        <h2>Hardware, architecture, verification, robotics, and the project team</h2>
       </div>
 
       <div class="project-gallery">
-        <figure>
-          <img
-            src="/images/capstone-platform/platform.jpg"
-            alt="Complete FPGA curriculum platform"
-          />
-          <figcaption>Complete hardware platform</figcaption>
+        <figure class="project-gallery-contained">
+          <a
+            href="/images/capstone-platform/Complete_Cora_PCB.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the complete Cora Z7 and peripheral PCB image"
+          >
+            <img
+              src="/images/capstone-platform/Complete_Cora_PCB.jpg"
+              alt="Complete Cora Z7 educational platform with its custom peripheral PCB, sensor, and displays"
+            />
+          </a>
+          <figcaption>Complete Cora Z7 and peripheral PCB platform</figcaption>
+        </figure>
+
+        <figure class="project-gallery-diagram project-gallery-wide">
+          <a
+            href="/images/capstone-platform/Block_Diagram_404.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the complete team and subsystem block diagram"
+          >
+            <img
+              src="/images/capstone-platform/Block_Diagram_404.png"
+              alt="Complete project block diagram with team subsystem ownership"
+            />
+          </a>
+          <figcaption>Complete team and subsystem block diagram</figcaption>
+        </figure>
+
+        <figure class="project-gallery-diagram">
+          <a
+            href="/images/capstone-platform/SimplifiedBlockDiagram.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the simplified system block diagram"
+          >
+            <img
+              src="/images/capstone-platform/SimplifiedBlockDiagram.png"
+              alt="Simplified Cora Z7 and AXI peripheral architecture"
+            />
+          </a>
+          <figcaption>Simplified system block diagram</figcaption>
         </figure>
 
         <figure>
-          <img
-            src="/images/capstone-platform/architecture.png"
-            alt="FPGA curriculum platform architecture"
-          />
-          <figcaption>System architecture</figcaption>
+          <a
+            href="/images/capstone-platform/VivadoBlockDiagram.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the detailed Vivado block design"
+          >
+            <img
+              src="/images/capstone-platform/VivadoBlockDiagram.jpg"
+              alt="Detailed master Vivado block design"
+            />
+          </a>
+          <figcaption>In-depth Vivado block design</figcaption>
         </figure>
 
         <figure>
-          <img
-            src="/images/capstone-platform/waveform.png"
-            alt="FPGA verification waveform"
-          />
-          <figcaption>Simulation and verification</figcaption>
+          <a
+            href="/images/capstone-platform/TESTBenches.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the AXI VIP peripheral verification waveform"
+          >
+            <img
+              src="/images/capstone-platform/TESTBenches.jpg"
+              alt="AXI VIP simulation waveform used to verify FPGA peripherals"
+            />
+          </a>
+          <figcaption>AXI VIP peripheral verification</figcaption>
+        </figure>
+
+        <figure>
+          <a
+            href="/images/capstone-platform/BotTesting.JPG"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the autonomous robot functional testing image"
+          >
+            <img
+              src="/images/capstone-platform/BotTesting.JPG"
+              alt="Functional testing of the autonomous FPGA robot"
+            />
+          </a>
+          <figcaption>Autonomous robot functional testing</figcaption>
+        </figure>
+
+        <figure>
+          <a
+            href="/images/capstone-platform/BotChasis.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the SolidWorks robot chassis image"
+          >
+            <img
+              src="/images/capstone-platform/BotChasis.jpg"
+              alt="Autonomous robot chassis designed in SolidWorks"
+            />
+          </a>
+          <figcaption>SolidWorks chassis design</figcaption>
+        </figure>
+
+        <figure>
+          <a
+            href="/images/FPGA_Bot.jpeg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the completed autonomous FPGA robot image"
+          >
+            <img
+              src="/images/FPGA_Bot.jpeg"
+              alt="Completed autonomous FPGA robot with its sensors, electronics, and mecanum wheels"
+            />
+          </a>
+          <figcaption>Completed autonomous FPGA robot</figcaption>
+        </figure>
+
+        <figure>
+          <a
+            href="/images/Group_pic_Industry_Choice.jpeg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the Industry Choice award team image"
+          >
+            <img
+              src="/images/Group_pic_Industry_Choice.jpeg"
+              alt="404 Bot Not Found team receiving the Industry Choice Electrical Engineering award"
+            />
+          </a>
+          <figcaption>Industry Choice Electrical Engineering award team</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- Final links -->
+    <!-- Resources -->
     <section class="project-cta">
-      <p class="eyebrow">Explore the Project</p>
-      <h2>Technical resources and supporting material</h2>
+      <p class="eyebrow">Project Resources</p>
+      <h2>Technical documentation and supporting material</h2>
 
       <div class="button-row">
         <a
           class="button primary-button"
-          href="#"
+          href="https://github.com/Lpluis/Capstone_Project"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -584,11 +981,20 @@ const validationMethods = [
 
         <a
           class="button secondary-button"
-          href="#"
+          href="/documents/2_07_Product_Specification.pdf"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Technical Documentation
+          Product Specification
+        </a>
+
+        <a
+          class="button secondary-button"
+          href="/documents/404-bot-not-found-poster.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Project Poster
         </a>
 
         <a class="button secondary-button" href="/projects/">
