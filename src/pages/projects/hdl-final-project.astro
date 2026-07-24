@@ -82,11 +82,19 @@ const verification = [
       </div>
     </div>
 
-    <img
-      class="project-hero-image"
-      src="/images/hdl-final-project/execution-machine-waves.jpg"
-      alt="Vivado waveform showing the execution engine state and shared-bus activity"
-    />
+    <a
+      class="hdl-zoom-frame hdl-zoom-frame-hero"
+      href="/images/hdl-final-project/execution-machine-waves.jpg"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open the full-resolution Vivado execution waveform"
+    >
+      <img
+        class="project-hero-image hdl-zoom-image"
+        src="/images/hdl-final-project/execution-machine-waves.jpg"
+        alt="Vivado waveform showing the execution engine state and shared-bus activity"
+      />
+    </a>
   </section>
 
   <section class="project-facts-section">
@@ -179,12 +187,20 @@ const verification = [
         </p>
 
         <figure class="project-figure">
-          <img
-            class="project-content-image"
-            src="/images/hdl-final-project/execution-machine-waves.jpg"
-            alt="Vivado timing waveform for the processor execution state machine"
-            loading="lazy"
-          />
+          <a
+            class="hdl-zoom-frame"
+            href="/images/hdl-final-project/execution-machine-waves.jpg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open the full-resolution processor timing waveform"
+          >
+            <img
+              class="project-content-image hdl-zoom-image"
+              src="/images/hdl-final-project/execution-machine-waves.jpg"
+              alt="Vivado timing waveform for the processor execution state machine"
+              loading="lazy"
+            />
+          </a>
           <figcaption>
             Vivado waveform capture used to inspect state transitions, address
             selection, read/write control, and shared-bus transfers.
@@ -286,3 +302,43 @@ const verification = [
     </section>
   </article>
 </BaseLayout>
+
+<style>
+  .hdl-zoom-frame {
+    display: block;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    cursor: zoom-in;
+  }
+
+  .hdl-zoom-frame-hero {
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .hdl-zoom-image {
+    transition: transform 0.35s ease;
+  }
+
+  .hdl-zoom-frame:hover .hdl-zoom-image,
+  .hdl-zoom-frame:focus-visible .hdl-zoom-image {
+    transform: scale(1.2);
+  }
+
+  .hdl-zoom-frame:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .hdl-zoom-frame .project-hero-image,
+  .hdl-zoom-frame .project-content-image {
+    margin: 0;
+    border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hdl-zoom-image {
+      transition: none;
+    }
+  }
+</style>
