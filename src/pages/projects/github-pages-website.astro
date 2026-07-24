@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const technologies = [
+  'Astro',
+  'HTML',
+  'CSS',
+  'VS Code',
+  'Git',
+  'GitHub Pages',
+  'AI-Assisted Development',
+  'Responsive Design',
+  'Accessibility',
+];
+
+const learningLoop = [
+  {
+    number: '01',
+    title: 'Define the Goal',
+    description:
+      'Start with a concrete page, content, layout, or debugging problem and describe the intended result in plain language.',
+  },
+  {
+    number: '02',
+    title: 'Build with AI',
+    description:
+      'Use AI inside the development workflow to inspect the repository, explain unfamiliar code, suggest changes, and implement focused updates.',
+  },
+  {
+    number: '03',
+    title: 'Review the Code',
+    description:
+      'Read the Astro, HTML, and CSS changes in VS Code to understand what changed, where it is used, and how it affects the page.',
+  },
+  {
+    number: '04',
+    title: 'Verify and Refine',
+    description:
+      'Run a production build, inspect the rendered result, identify problems, and repeat the process with smaller improvements.',
+  },
+];
+---
+
+<BaseLayout
+  title="AI-Assisted Engineering Portfolio | Luis Leon Pineda"
+  description="A living Astro and GitHub Pages portfolio used to learn AI-assisted development, VS Code, HTML, CSS, Git, debugging, accessibility, and iterative web design."
+>
+  <section class="project-hero container">
+    <div class="project-hero-content">
+      <p class="eyebrow">Personal Learning Project</p>
+      <h1>AI-Assisted Engineering Portfolio</h1>
+
+      <p class="hero-description">
+        This website is both my engineering portfolio and a hands-on learning
+        environment where I practice using AI, VS Code, Astro, Git, and GitHub
+        Pages to turn technical work into clear, accessible project stories.
+      </p>
+
+      <div class="technology-list project-technologies">
+        {
+          technologies.map((technology) => (
+            <span>{technology}</span>
+          ))
+        }
+      </div>
+
+      <div class="button-row">
+        <a class="button primary-button" href="#learning-process">
+          Learning Process
+        </a>
+
+        <a
+          class="button secondary-button"
+          href="https://github.com/Lpluis/Lpluis.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Repository
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="project-hero-image"
+      src="/images/githubwebpage/Webpage.jpg"
+      alt="Luis Leon Pineda engineering portfolio displayed in a web browser"
+    />
+  </section>
+
+  <section class="project-facts-section">
+    <div class="container project-facts-grid">
+      <article class="project-fact">
+        <p class="project-fact-label">Project Type</p>
+        <p>Living Learning Project</p>
+      </article>
+
+      <article class="project-fact">
+        <p class="project-fact-label">Framework</p>
+        <p>Astro</p>
+      </article>
+
+      <article class="project-fact">
+        <p class="project-fact-label">Development</p>
+        <p>VS Code and AI</p>
+      </article>
+
+      <article class="project-fact">
+        <p class="project-fact-label">Deployment</p>
+        <p>GitHub Pages</p>
+      </article>
+    </div>
+  </section>
+
+  <article class="project-page container">
+    <section class="project-section" id="overview">
+      <div class="project-section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>Learning web development by building something useful</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          I started this website to create a permanent home for my engineering
+          work. Instead of treating it as a one-time portfolio assignment, I am
+          using it as an ongoing way to learn modern development tools and
+          improve how I communicate technical projects.
+        </p>
+
+        <p>
+          Every improvement gives me a practical problem to solve: organizing
+          Astro pages, understanding shared layouts, writing responsive CSS,
+          managing images and documents, fixing links, improving metadata, and
+          validating a production build before publishing it.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section" id="learning-process">
+      <div class="project-section-heading">
+        <p class="eyebrow">Learning Process</p>
+        <h2>An iterative workflow built around questions, code, and verification</h2>
+      </div>
+
+      <div class="learning-path-grid">
+        {
+          learningLoop.map((step) => (
+            <article class="learning-step">
+              <span class="learning-step-number">{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">AI as a Development Tool</p>
+        <h2>Using AI to accelerate learning without skipping understanding</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          I use AI as a collaborative tool for exploring the codebase,
+          explaining unfamiliar syntax, locating the source of a visual issue,
+          drafting content, and implementing focused changes. This makes it
+          possible to move from an idea to a working result quickly.
+        </p>
+
+        <p>
+          The important part of the process is reviewing the result. I compare
+          the change with the original request, inspect the affected files, run
+          the Astro build, and continue refining anything that does not match
+          the intended design or message.
+        </p>
+
+        <div class="learning-objectives">
+          <h3>What I am practicing</h3>
+          <ul class="project-list">
+            <li>Writing clear, specific requests for technical work.</li>
+            <li>Reading and editing Astro component markup.</li>
+            <li>Tracing CSS selectors back to the pages that use them.</li>
+            <li>Evaluating AI-generated changes instead of accepting them blindly.</li>
+            <li>Using build output and browser behavior as evidence.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Technical Foundation</p>
+        <h2>A small static site with reusable structure</h2>
+      </div>
+
+      <div class="architecture-grid">
+        <article class="architecture-card">
+          <h3>Astro Pages</h3>
+          <p>
+            File-based routes provide the home, about, experience, contact,
+            project index, and detailed project pages.
+          </p>
+        </article>
+
+        <article class="architecture-card">
+          <h3>Shared Components</h3>
+          <p>
+            A common layout, header, footer, and project-card component keep
+            navigation and repeated content consistent.
+          </p>
+        </article>
+
+        <article class="architecture-card">
+          <h3>Global CSS</h3>
+          <p>
+            Organized design tokens, responsive grids, project layouts, cards,
+            galleries, and mobile breakpoints define the visual system.
+          </p>
+        </article>
+
+        <article class="architecture-card">
+          <h3>Static Deployment</h3>
+          <p>
+            Astro generates static HTML that GitHub Pages can serve directly
+            from the public portfolio URL.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Work Completed</p>
+        <h2>Improving the portfolio one real requirement at a time</h2>
+      </div>
+
+      <div class="project-section-content">
+        <ul class="project-list">
+          <li>Built responsive home, about, experience, contact, and project pages.</li>
+          <li>Created reusable project cards and a shared site layout.</li>
+          <li>Developed a detailed FPGA capstone case study with technical diagrams.</li>
+          <li>Organized and documented the global stylesheet by page and feature.</li>
+          <li>Added accessible image descriptions and full-resolution gallery links.</li>
+          <li>Corrected document paths, project links, metadata, and social preview titles.</li>
+          <li>Used repeatable production builds to catch invalid markup and routing issues.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="project-section-heading">
+        <p class="eyebrow">Reflection</p>
+        <h2>The portfolio records both engineering work and technical growth</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          This project is teaching me that effective AI-assisted development is
+          not only about generating code. It requires describing the goal,
+          preserving context, checking assumptions, understanding file
+          relationships, and verifying that the final result actually works.
+        </p>
+
+        <p>
+          As the site grows, I plan to keep improving its project documentation,
+          accessibility, responsive presentation, performance, and deployment
+          workflow while applying what I learn to new engineering projects.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-cta">
+      <p class="eyebrow">Explore the Project</p>
+      <h2>View the source or return to the portfolio</h2>
+
+      <div class="button-row">
+        <a
+          class="button primary-button"
+          href="https://github.com/Lpluis/Lpluis.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Repository
+        </a>
+
+        <a class="button secondary-button" href="/projects/">
+          Back to Projects
+        </a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
