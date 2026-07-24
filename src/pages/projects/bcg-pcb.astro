@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const technologies = [
+  'Mixed-Signal PCB Design',
+  'Data Acquisition',
+  'KiCad',
+  'Digilent Analog Discovery 3',
+  'Hardware Validation',
+];
+
+const responsibilities = [
+  'Designed and simulated custom mixed-signal printed circuit boards.',
+  'Supported PCB assembly and first-power-on hardware bring-up.',
+  'Measured and evaluated signals with oscilloscopes and logic analyzers.',
+  'Troubleshot board-level functional and signal-integrity issues.',
+  'Created the project bill of materials (BOM) to organize component selection, quantities, sourcing, and cost information.',
+  'Improved component sourcing, manufacturability, cost, and deployment scalability.',
+  'Transferred design information, test data, and lessons learned to the next group of research students to support the project’s long-term continuity.',
+];
+
+const workflow = [
+  {
+    number: '01',
+    title: 'Understand the System',
+    description:
+      'Review the research platform’s sensing, acquisition, interface, power, and mechanical needs before beginning the board design.',
+  },
+  {
+    number: '02',
+    title: 'Design the PCB',
+    description:
+      'Develop the schematic and physical layout while separating sensitive mixed-signal paths and accommodating the required connectors and devices.',
+  },
+  {
+    number: '03',
+    title: 'Bring Up Hardware',
+    description:
+      'Assemble and inspect the board, verify power and reference points, and test interfaces in a controlled sequence.',
+  },
+  {
+    number: '04',
+    title: 'Measure and Refine',
+    description:
+      'Use laboratory instruments to evaluate behavior, isolate faults, validate revisions, and feed findings back into the next design iteration.',
+  },
+];
+---
+
+<BaseLayout
+  title="Ballistocardiogram Data-Acquisition PCB | Luis Leon Pineda"
+  description="Mixed-signal PCB design, hardware bring-up, validation, troubleshooting, and cost-reduction work for a ballistocardiogram data-acquisition research platform."
+>
+  <section class="project-hero container">
+    <div class="project-hero-content">
+      <p class="eyebrow">Undergraduate Research</p>
+      <h1>Ballistocardiogram (BCG) Data-Acquisition PCB</h1>
+
+      <p class="hero-description">
+        A mixed-signal hardware platform developed to acquire the small sensor
+        signals used in ballistocardiography research, with an emphasis on PCB
+        design, reliable hardware bring-up, measurement, troubleshooting, and
+        scalable deployment.
+      </p>
+
+      <div class="technology-list project-technologies">
+        {technologies.map((technology) => <span>{technology}</span>)}
+      </div>
+
+      <div class="button-row">
+        <a class="button primary-button" href="#my-contribution">My Contribution</a>
+        <a class="button secondary-button" href="#hardware">View Hardware</a>
+      </div>
+    </div>
+
+    <img
+      class="project-hero-image"
+      src="/images/bcg-pcb/BCG_PCB1.jpg"
+      alt="Three-dimensional render of the ballistocardiogram mixed-signal data-acquisition PCB"
+    />
+  </section>
+
+  <section class="project-facts-section">
+    <div class="container project-facts-grid">
+      <article class="project-fact">
+        <p class="project-fact-label">Project Area</p>
+        <p>Biomedical Instrumentation</p>
+      </article>
+      <article class="project-fact">
+        <p class="project-fact-label">Hardware</p>
+        <p>Mixed-Signal PCB</p>
+      </article>
+      <article class="project-fact">
+        <p class="project-fact-label">My Role</p>
+        <p>Undergraduate Research Assistant</p>
+      </article>
+      <article class="project-fact">
+        <p class="project-fact-label">Focus</p>
+        <p>Design, Bring-Up, and Validation</p>
+      </article>
+    </div>
+  </section>
+
+  <article class="project-page container">
+    <section class="project-section" id="overview">
+      <div class="project-section-heading">
+        <p class="eyebrow">What Is BCG?</p>
+        <h2>Measuring the body’s mechanical response to each heartbeat</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          A ballistocardiogram, abbreviated BCG, records the subtle motion of
+          the body associated with cardiac contraction and the ejection and
+          movement of blood. Unlike an electrocardiogram, which measures the
+          heart’s electrical activity, ballistocardiography focuses on a
+          mechanical response.
+        </p>
+        <p>
+          These motions are small, so the acquisition electronics must handle
+          low-level sensor signals while preserving useful physiological
+          information. That requirement makes board layout, grounding, power,
+          component selection, signal integrity, and repeatable validation
+          central engineering concerns.
+        </p>
+        <p>
+          This project focused on the data-acquisition hardware used in a
+          university research platform. The PCB work supports signal capture
+          and experimentation; it is not presented here as a medical device or
+          diagnostic product.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section" id="my-contribution">
+      <div class="project-section-heading">
+        <p class="eyebrow">My Contribution</p>
+        <h2>From board design through laboratory validation</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          As an undergraduate research assistant at Texas State University, I
+          helped relaunch and improve a faculty-developed ballistocardiogram
+          data-acquisition platform. My work covered the complete board-level
+          engineering loop rather than ending when the PCB layout was complete.
+        </p>
+        <ul class="project-list">
+          {responsibilities.map((responsibility) => <li>{responsibility}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section" id="development-workflow">
+      <div class="project-section-heading">
+        <p class="eyebrow">Development Workflow</p>
+        <h2>An iterative design, test, and improvement cycle</h2>
+      </div>
+
+      <div class="project-section-content">
+        <div class="learning-path-grid">
+          {workflow.map((step) => (
+            <article class="learning-step">
+              <span class="learning-step-number">{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="hardware">
+      <div class="project-section-heading">
+        <p class="eyebrow">Hardware Development</p>
+        <h2>Board revisions shaped by integration and test results</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The available board designs show the evolution of the acquisition
+          electronics, component placement, connectors, test points, and
+          mechanical outline. Three-dimensional PCB renders were used to review
+          layout and integration before fabrication and assembly. KiCad was
+          used for schematic capture, PCB layout, and three-dimensional board
+          review throughout the design process.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <a href="/images/bcg-pcb/BCG_PCB1.jpg" target="_blank">
+              <img
+                src="/images/bcg-pcb/BCG_PCB1.jpg"
+                alt="Ballistocardiogram data-acquisition PCB design with acquisition circuitry, interfaces, and test points"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>Data-acquisition PCB layout rendered for design review.</figcaption>
+          </figure>
+
+          <figure>
+            <a href="/images/bcg-pcb/bedsensorDesign2v9.png" target="_blank">
+              <img
+                src="/images/bcg-pcb/bedsensorDesign2v9.png"
+                alt="Bed-sensor ballistocardiogram PCB revision with mixed-signal circuitry"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>Bed-sensor PCB revision showing the mixed-signal component layout.</figcaption>
+          </figure>
+
+          <figure>
+            <a href="/images/bcg-pcb/bedsensorDesign2v9-Back.png" target="_blank">
+              <img
+                src="/images/bcg-pcb/bedsensorDesign2v9-Back.png"
+                alt="Back side of the bed-sensor ballistocardiogram PCB revision"
+                loading="lazy"
+              />
+            </a>
+            <figcaption>Reverse-side render used to inspect routing and mechanical clearances.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="validation">
+      <div class="project-section-heading">
+        <p class="eyebrow">Bring-Up and Validation</p>
+        <h2>Turning a fabricated board into a verified system</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          Hardware bring-up used staged checks so that power, references,
+          interfaces, and signal paths could be evaluated before complete
+          system operation. A Digilent Analog Discovery 3 provided oscilloscope
+          and logic-analyzer measurements, giving direct evidence of circuit
+          behavior and helping isolate board-level faults.
+        </p>
+        <p>
+          The results informed subsequent revisions and practical improvements
+          to component availability, cost, manufacturability, and deployment.
+          This work connected schematic and layout decisions with measured
+          performance on physical hardware.
+        </p>
+        <p>
+          I also created the project bill of materials to organize component
+          and sourcing information. To help the research continue beyond my
+          involvement, I shared the accumulated design information, test data,
+          and troubleshooting knowledge with the next group of research
+          students.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-cta">
+      <p class="eyebrow">Continue Exploring</p>
+      <h2>Return to the engineering project portfolio</h2>
+      <div class="button-row">
+        <a class="button primary-button" href="/projects/">Back to Projects</a>
+        <a class="button secondary-button" href="/experience/">View Experience</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

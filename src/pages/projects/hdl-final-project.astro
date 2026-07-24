@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const technologies = [
+  'SystemVerilog',
+  'AMD Vivado',
+  'XSim',
+  '256-Bit Datapath',
+  'Finite-State Machines',
+  'Matrix Processing',
+];
+
+const components = [
+  {
+    title: 'Execution Engine',
+    description:
+      'Fetches and decodes 32-bit instructions, coordinates bus transfers, selects the correct ALU, and advances a multi-cycle control state machine.',
+  },
+  {
+    title: 'Matrix ALU',
+    description:
+      'Treats each 256-bit operand as a complete 4 × 4 matrix of sixteen 16-bit elements and performs arithmetic and transformation operations.',
+  },
+  {
+    title: 'Integer ALU',
+    description:
+      'Provides addition, subtraction, multiplication, and division using the same shared 256-bit source and result registers.',
+  },
+  {
+    title: 'Memory Subsystems',
+    description:
+      'Separate instruction and main memories store the program, matrices, integer values, intermediate values, and completed results.',
+  },
+];
+
+const matrixOperations = [
+  '4 × 4 matrix multiplication',
+  'Element-by-element addition and subtraction',
+  'Matrix transpose',
+  'Bus-supplied matrix scaling',
+  'Immediate-value matrix scaling',
+];
+
+const verification = [
+  'Generates a reset pulse and a 10 ns simulation clock.',
+  'Exercises matrix, integer, memory, and internal-register operations.',
+  'Stops execution when the processor decodes opcode 0xFF.',
+  'Compares final memory and register values against expected results.',
+  'Reports a passing memory check after the complete instruction sequence.',
+];
+---
+
+<BaseLayout
+  title="256-Bit Matrix Soft Processor | Luis Leon Pineda"
+  description="A SystemVerilog soft processor with a 256-bit shared bus, matrix and integer ALUs, multi-cycle instruction execution, and Vivado/XSim verification."
+>
+  <section class="project-hero container">
+    <div class="project-hero-content">
+      <p class="eyebrow">HDL Final Project</p>
+      <h1>256-Bit Matrix Soft Processor</h1>
+
+      <p class="hero-description">
+        A modular application-specific processor designed to move an entire
+        4 × 4 matrix in one bus transaction and execute matrix and integer
+        operations through a shared 256-bit datapath.
+      </p>
+
+      <div class="technology-list project-technologies">
+        {technologies.map((technology) => <span>{technology}</span>)}
+      </div>
+
+      <div class="button-row">
+        <a class="button primary-button" href="#architecture">Explore Architecture</a>
+        <a
+          class="button secondary-button"
+          href="https://github.com/Lpluis/HDL_FinalProject"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Repository
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="project-hero-image"
+      src="/images/hdl-final-project/execution-machine-waves.jpg"
+      alt="Vivado waveform showing the execution engine state and shared-bus activity"
+    />
+  </section>
+
+  <section class="project-facts-section">
+    <div class="container project-facts-grid">
+      <article class="project-fact">
+        <p class="project-fact-label">Project Type</p>
+        <p>HDL Final Project</p>
+      </article>
+      <article class="project-fact">
+        <p class="project-fact-label">Datapath</p>
+        <p>256-Bit Shared Bus</p>
+      </article>
+      <article class="project-fact">
+        <p class="project-fact-label">Matrix Format</p>
+        <p>4 × 4, 16-Bit Elements</p>
+      </article>
+      <article class="project-fact">
+        <p class="project-fact-label">Verification</p>
+        <p>Vivado / XSim</p>
+      </article>
+    </div>
+  </section>
+
+  <article class="project-page container">
+    <section class="project-section" id="overview">
+      <div class="project-section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>One datapath connecting a complete processor</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          This project implements a soft processor in SystemVerilog with
+          separate instruction memory, main memory, matrix ALU, integer ALU,
+          execution engine, and simulation modules. Every component
+          communicates through one address-decoded, 256-bit tri-state bus.
+        </p>
+        <p>
+          The wide datapath is the defining architectural choice: all sixteen
+          elements of a 4 × 4 matrix fit in a single word. The execution engine
+          controls which module owns the bus, sequences each transfer, and
+          routes completed results back to memory or its internal registers.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section" id="architecture">
+      <div class="project-section-heading">
+        <p class="eyebrow">Architecture</p>
+        <h2>Modular compute, memory, and control blocks</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The upper address nibble selects a processor module, while lower
+          address bits select a local memory location or register. A selected
+          source drives the bus; all other modules remain in a high-impedance
+          state until the controller authorizes them to transmit.
+        </p>
+
+        <div class="architecture-grid">
+          {components.map((component) => (
+            <article class="architecture-card">
+              <h3>{component.title}</h3>
+              <p>{component.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="instruction-cycle">
+      <div class="project-section-heading">
+        <p class="eyebrow">Instruction Cycle</p>
+        <h2>A multi-cycle fetch, decode, execute workflow</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          Each 32-bit instruction identifies an opcode, destination, and two
+          operand sources. The controller fetches and decodes the instruction,
+          moves each operand to the selected ALU, starts the operation, waits
+          for its result, and writes that result to its destination before
+          fetching the next instruction.
+        </p>
+        <p>
+          Matrix opcodes are routed to the matrix ALU, while opcodes beginning
+          with hexadecimal 1 select the integer ALU. Opcode 0xFF cleanly stops
+          processor execution and allows the test environment to check results.
+        </p>
+
+        <figure class="project-figure">
+          <img
+            class="project-content-image"
+            src="/images/hdl-final-project/execution-machine-waves.jpg"
+            alt="Vivado timing waveform for the processor execution state machine"
+            loading="lazy"
+          />
+          <figcaption>
+            Vivado waveform capture used to inspect state transitions, address
+            selection, read/write control, and shared-bus transfers.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section" id="operations">
+      <div class="project-section-heading">
+        <p class="eyebrow">Compute Capabilities</p>
+        <h2>Matrix operations alongside integer arithmetic</h2>
+      </div>
+
+      <div class="project-section-content">
+        <h3>Implemented matrix operations</h3>
+        <ul class="project-list">
+          {matrixOperations.map((operation) => <li>{operation}</li>)}
+        </ul>
+
+        <h3>Integer operations</h3>
+        <p>
+          The integer ALU supports addition, subtraction, multiplication, and
+          division. Its operands and result use the same 256-bit transfer path,
+          allowing both compute units to share the memory and control system.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section" id="verification">
+      <div class="project-section-heading">
+        <p class="eyebrow">Verification</p>
+        <h2>An end-to-end program with automated result checks</h2>
+      </div>
+
+      <div class="project-section-content">
+        <p>
+          The included program exercises matrix addition, scaling,
+          subtraction, transpose and multiplication, as well as all four
+          integer operations and transfers through internal registers.
+        </p>
+        <ul class="project-list">
+          {verification.map((item) => <li>{item}</li>)}
+        </ul>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <strong>1625 ns</strong>
+            <span>Recorded simulation completion</span>
+          </article>
+          <article class="result-card">
+            <strong>256 bits</strong>
+            <span>Shared data-bus width</span>
+          </article>
+          <article class="result-card">
+            <strong>11</strong>
+            <span>Operations plus processor stop</span>
+          </article>
+          <article class="result-card">
+            <strong>Passed</strong>
+            <span>Automated memory check</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="highlights">
+      <div class="project-section-heading">
+        <p class="eyebrow">Design Highlights</p>
+        <h2>What this project demonstrates</h2>
+      </div>
+
+      <div class="project-section-content">
+        <ul class="project-list">
+          <li>Application-specific processor architecture and instruction design.</li>
+          <li>Address decoding and coordinated ownership of a shared tri-state bus.</li>
+          <li>Finite-state-machine control of multi-cycle data movement and execution.</li>
+          <li>Parallel representation and processing of complete 4 × 4 matrices.</li>
+          <li>Integration of independent memory, control, and arithmetic modules.</li>
+          <li>Self-checking behavioral simulation in AMD Vivado and XSim.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-cta">
+      <p class="eyebrow">Explore the Project</p>
+      <h2>Review the SystemVerilog source and full documentation</h2>
+      <div class="button-row">
+        <a
+          class="button primary-button"
+          href="https://github.com/Lpluis/HDL_FinalProject"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Repository
+        </a>
+        <a class="button secondary-button" href="/projects/">Back to Projects</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

@@ -87,24 +87,26 @@ import ProjectCard from '../components/ProjectCard.astro';
       />
 
       <ProjectCard
-        title="FPGA Autonomous Robot"
-        description="SystemVerilog autonomous controller using a Zynq-7000 SoC, infrared boundary detection, PWM motor control, and finite-state-machine navigation."
-        image="/images/FPGA_Bot.jpeg"
-        imageAlt="FPGA autonomous robot"
-        href="/projects/fpga-autonomous-robot/"
+        title="256-Bit Matrix Soft Processor"
+        description="A modular SystemVerilog processor built around a shared 256-bit tri-state bus, with dedicated matrix and integer ALUs, a multi-cycle execution engine, and automated Vivado/XSim verification."
+        image="/images/hdl-final-project/execution-machine-waves.jpg"
+        imageAlt="Vivado waveform simulation of the 256-bit matrix soft processor execution engine"
+        href="/projects/hdl-final-project/"
         technologies={[
           'SystemVerilog',
           'Vivado',
-          'Zynq-7000',
-          'PWM',
+          'XSim',
+          'Processor Architecture',
+          'Finite-State Machines',
+          'Matrix ALU',
         ]}
       />
 
       <ProjectCard
-        title="Ballistocardiogram(BCG) Data Acquisition PCB"
-        description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a BCG data-acquisition platform."
+        title="Ballistocardiogram (BCG) Data-Acquisition PCB"
+        description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a ballistocardiogram (BCG) data-acquisition platform."
         image="/images/bcg-pcb/BCG_PCB1.jpg"
-        imageAlt="Mixed-signal BCG data acquisition PCB"
+        imageAlt="Mixed-signal ballistocardiogram data-acquisition PCB"
         href="/projects/bcg-pcb/"
         technologies={[
           'PCB Design',

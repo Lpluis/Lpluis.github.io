@@ -20,6 +20,22 @@ import ProjectCard from '../../components/ProjectCard.astro';
   <section class="section container">
     <div class="project-grid">
       <ProjectCard
+        title="256-Bit Matrix Soft Processor"
+        description="A modular SystemVerilog processor built around a shared 256-bit tri-state bus, with dedicated matrix and integer ALUs, a multi-cycle execution engine, and automated Vivado/XSim verification."
+        image="/images/hdl-final-project/execution-machine-waves.jpg"
+        imageAlt="Vivado waveform simulation of the 256-bit matrix soft processor execution engine"
+        href="/projects/hdl-final-project/"
+        technologies={[
+          'SystemVerilog',
+          'Vivado',
+          'XSim',
+          'Processor Architecture',
+          'Finite-State Machines',
+          'Matrix ALU',
+        ]}
+      />
+
+      <ProjectCard
         title="HDL FPGA 404: BOT_Not_Found"
         description="Educational FPGA platform designed to give engineering students practical experience with digital design, embedded systems, and hardware/software integration. The project combined reusable SystemVerilog modules, AXI-based peripherals, guided laboratory procedures, technical documentation, and hardware demonstrations on a Zynq-7000 development board."
         image="/images/CoraZ7.jpeg"
@@ -67,10 +83,10 @@ import ProjectCard from '../../components/ProjectCard.astro';
       />
 
       <ProjectCard
-        title="BCG Data Acquisition PCB"
-        description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a BCG data-acquisition platform."
+        title="Ballistocardiogram (BCG) Data-Acquisition PCB"
+        description="Mixed-signal PCB development, hardware bring-up, signal validation, troubleshooting, and cost-reduction work for a ballistocardiogram (BCG) data-acquisition platform."
         image="/images/bcg-pcb/BCG_PCB1.jpg"
-        imageAlt="Mixed-signal BCG data acquisition PCB"
+        imageAlt="Mixed-signal ballistocardiogram data-acquisition PCB"
         href="/projects/bcg-pcb/"
         technologies={[
           'PCB Design',
